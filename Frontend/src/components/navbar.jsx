@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {assets} from "../assets/assets.js";
 import {NavLink} from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  return (
-    <div className='px-10 py-3 text-[#fff] flex justify-between items-center'>
-      
-      <img src={assets.logo} alt="" className='w-20 h-20' />
 
-      <div className='flex gap-6 items-center justify-center'>
+  const [visible, setVisible] = useState(false);
+
+  return (
+    <div className='px-6 sm:px-10 py-3 text-[#fff] flex justify-between items-center'>
+      
+      <img src={assets.logo} alt="" className='w-16 sm:w-20 h-16 sm:h-20' />
+
+      <div className='gap-2 md:gap-6 items-center justify-center sm:flex hidden text-sm md:text-base'>
         <NavLink to="/" className='flex gap-1 items-center flex-col'>
-          <p>Home</p>
+          <p className=''>Home</p>
           <hr className='w-2/3 border-none bg-gray-200 h-[1.5px] hidden' />
         </NavLink>
 
@@ -30,7 +33,7 @@ function Navbar() {
           <hr className='w-2/3 border-none bg-gray-200 h-[1.5px] hidden' />
         </NavLink>
 
-        <button className='rounded-full py-1.5 px-3 border border-[#fff]/50 text-sm'>Admin Panel</button>
+        <button className='rounded-full py-1.5 px-3 border border-[#fff]/50 text-xs md:text-sm'>Admin Panel</button>
       </div>
 
       <div className='flex gap-6 items-center justify-center'>
@@ -57,7 +60,26 @@ function Navbar() {
           </div>
 
         </button>
+
+        <svg 
+          onClick={() => setVisible(true)} 
+          xmlns="http://www.w3.org/2000/svg" 
+          className='w-8 h-8 block sm:hidden cursor-pointer' 
+          viewBox="0 -960 960 960" 
+          fill="#e3e3e3">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+        </svg>
+
       </div>
+
+      {/* Menu option for small screen */}
+      <div onClick={() => setVisible(false)} className={`absolute top-0 bottom-0 right-0 overflow-hidden px-2 py-4 bg-[#0d1224] transition-all ${visible ? "w-full" : "w-0"}`}>
+        <div  className='w-full px-4 py-1 flex items-center cursor-pointer'>
+          <svg xmlns="http://www.w3.org/2000/svg" className='w-8 h-8' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+          <p>Back</p>
+        </div>
+      </div>
+      
     </div>
   )
 }
