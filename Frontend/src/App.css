@@ -1,4 +1,8 @@
-
 a.active hr {
     display: block;
+}
+
+.sidebar-menu.active {
+    background-color: #00008b;
+    color: white;
 }
