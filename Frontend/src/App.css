@@ -1,5 +1,6 @@
 a.active hr {
-    display: block;
+    /* display: block; */
+    opacity: 1;
 }
 
 .sidebar-menu.active {
