@@ -8,7 +8,7 @@ function Navbar() {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className='px-6 md:px-10 py-5 h-[10vh] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50'>
+    <div className='px-6 md:px-10 py-5 h-[10vh] bg-[#0d1224] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50 fixed w-full z-10'>
       
       <img src={assets.logo} alt="" className='w-16 sm:w-36' />
 

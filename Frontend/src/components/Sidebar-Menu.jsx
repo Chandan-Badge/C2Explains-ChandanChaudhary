@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function SidebarMenu() {
   return (
-      <div className='h-[90vh] gap-2 md:gap-8 hidden sm:flex justify-start flex-col text-sm md:text-base text-white fixed w-max pr-8 py-[22px] border-r border-r-[#b6bee5]/50'>
+      <div className='h-[90vh] gap-2 md:gap-8 hidden sm:flex justify-start flex-col text-sm md:text-base text-white fixed w-max pr-8 py-[22px] bottom-0 border-r border-r-[#b6bee5]/50'>
         <NavLink to="/" className='flex justify-start items-center gap-6'>
           <div class="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
           <p className=''>Home</p>

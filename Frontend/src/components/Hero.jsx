@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div className='text-[#fff] flex flex-col items-center justify-center gap-4 mt-12'>
+    <div className='text-[#fff] flex flex-col items-center justify-center gap-4 mt-40'>
 
       <div className='border border-[#b6bee5]/50 text-[#b6bee5] bg-[#181e33] text-sm py-1.5 px-4 rounded-full flex items-center justify-center group'>
         <p>🎉 Introducing our latest Development Projects.</p>
