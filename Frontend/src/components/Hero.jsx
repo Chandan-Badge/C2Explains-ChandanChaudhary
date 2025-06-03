@@ -4,25 +4,25 @@ function Hero() {
   return (
     <div className='text-[#fff] flex flex-col items-center justify-center gap-4 mt-12'>
 
-      <p className='border border-[#b6bee5]/50 text-[#b6bee5] bg-[#181e33] py-1 px-3 rounded-full flex items-center justify-center'>
-        🎉 Introducing our latest Development Projects. 
-        <a href="https://stackgallery-chandanchaudhary.netlify.app" target='_black' className='text-blue-500 flex px-1'>Show more
-          <svg xmlns="http://www.w3.org/2000/svg" className='w-6 h-6 fill-blue-500 pt-1' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m700-300-57-56 84-84H120v-80h607l-83-84 57-56 179 180-180 180Z"/></svg>
+      <div className='border border-[#b6bee5]/50 text-[#b6bee5] bg-[#181e33] text-sm py-1.5 px-4 rounded-full flex items-center justify-center group'>
+        <p>🎉 Introducing our latest Development Projects.</p>
+        <a href="https://stackgallery-chandanchaudhary.netlify.app" target='_black' className='text-blue-500 flex pl-1 text-center'>Show more
+          <svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-blue-500 ml-1' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m700-300-57-56 84-84H120v-80h607l-83-84 57-56 179 180-180 180Z"/></svg>
         </a> 
-      </p>
+      </div>
 
-      <h1 className='text-7xl font-bold text-center'>UIStack</h1>
+      <h1 className='text-7xl font-bold text-center'><span className='text-[#26ffe3]'>UI</span>Stack</h1>
       <p className='text-4xl font-bold text-center '>Ultimate Destination for Frontend Developer's</p>
       <p className='text-gray-400 text-base text-center max-w-[50vw]'>Accelerate your web development workflow, whether you're building sleek dashboards, dynamic landing pages, or scalable web applications, our components are built with accessibility, and modern design standards in mind.</p>
 
       <div className='flex justify-center items-center gap-20 mt-4 md:mt-5'>
-        <button className='border border-[#b6bee5]/50 hover:border-[#b6bee5] text-[#b6bee5] hover:text-gray-200 bg-[#181e33] py-2 px-16 rounded-full flex items-center gap-3 group'>
+        <button className='border border-[#b6bee5]/50 hover:border-[#26ffe3] text-[#b6bee5] hover:text-gray-200 bg-[#181e33] py-2 px-16 rounded-full flex items-center gap-3 group'>
           Browse Components
-          <svg xmlns="http://www.w3.org/2000/svg" className='w-3 fill-[#b6bee5] group-hover:fill-gray-200 pt-1' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" className='w-3 fill-[#b6bee5] group-hover:fill-gray-200 pt-[2px]' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
         </button>
-        <button className='border border-[#b6bee5]/50 hover:border-[#b6bee5] text-[#b6bee5] hover:text-gray-200 bg-[#181e33] py-2 px-16 rounded-full flex items-center gap-3 group'>
+        <button className='border border-[#b6bee5]/50 hover:border-[#26ffe3] text-[#b6bee5] hover:text-gray-200 bg-[#181e33] py-2 px-16 rounded-full flex items-center gap-3 group'>
           Browse Templates
-          <svg xmlns="http://www.w3.org/2000/svg" className='w-3 fill-[#b6bee5] group-hover:fill-gray-200 pt-1' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" className='w-3 fill-[#b6bee5] group-hover:fill-gray-200 pt-[2px]' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
         </button>
       </div>
 

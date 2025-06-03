@@ -3,6 +3,11 @@ a.active hr {
     opacity: 1;
 }
 
+a.active .menu {
+    /* display: block; */
+    opacity: 1;
+}
+
 .sidebar-menu.active {
     background-color: #00008b;
     color: white;

@@ -15,22 +15,22 @@ function Navbar() {
       <div className='gap-2 md:gap-6 items-center justify-center sm:flex hidden text-sm md:text-base'>
         <NavLink to="/" className='flex gap-1 items-center flex-col'>
           <p className=''>Home</p>
-          <hr className='w-2/3 border-none bg-gray-200 h-[1.5px] opacity-0' />
+          <hr className='w-2/3 border-none bg-[#26ffe3] h-[1.5px] opacity-0' />
         </NavLink>
 
         <NavLink to="/collection" className='flex gap-1 items-center flex-col'>
           <p>Collection</p>
-          <hr className='w-2/3 border-none bg-gray-200 h-[1.5px] opacity-0' />
+          <hr className='w-2/3 border-none bg-[#26ffe3] h-[1.5px] opacity-0' />
         </NavLink>
 
         <NavLink to="/About" className='flex gap-1 items-center flex-col'>
           <p>About</p>
-          <hr className='w-2/3 border-none bg-gray-200 h-[1.5px] opacity-0' />
+          <hr className='w-2/3 border-none bg-[#26ffe3] h-[1.5px] opacity-0' />
         </NavLink>
 
         <NavLink to="/Contact" className='flex gap-1 items-center flex-col'>
           <p>Contact</p>
-          <hr className='w-2/3 border-none bg-gray-200 h-[1.5px] opacity-0' />
+          <hr className='w-2/3 border-none bg-[#26ffe3] h-[1.5px] opacity-0' />
         </NavLink>
 
         <button className='rounded-full py-1 md:py-1.5 px-2 md:px-3 border border-[#fff]/50 text-xs md:text-sm'>Admin Panel</button>

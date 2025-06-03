@@ -13,12 +13,14 @@ import Product from './pages/Product';
 import Contact from './pages/Contact';
 import Collection from './pages/Collection';
 import Navbar from './components/navbar';
+import SidebarMenu from './components/Sidebar-Menu';
 
 function App() {
   return (
-    <div className=''>
+    <div className='font-[poppins]'>
 
         <Navbar />
+        <SidebarMenu />
 
         <Routes>
           <Route path='/' element={<Home/>} />
