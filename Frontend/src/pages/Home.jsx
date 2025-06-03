@@ -3,7 +3,7 @@ import Hero from '../components/hero';
 
 const Home = () => {
   return (
-    <div className='flex items-center justify-center h-[80vh] w-full'>
+    <div className='flex items-start justify-center w-full'>
       <Hero />
     </div>
   )
