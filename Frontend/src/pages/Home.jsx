@@ -3,8 +3,12 @@ import Hero from '../components/hero';
 
 const Home = () => {
   return (
-    <div className='flex items-start justify-center w-full'>
+    <div className='flex items-center justify-center flex-col'>
       <Hero />
+      {/* <Hero />
+      <Hero />
+      <Hero />
+      <Hero /> */}
     </div>
   )
 }

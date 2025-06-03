@@ -8,9 +8,9 @@ function Navbar() {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className='px-6 md:px-10 py-3 text-[#fff] flex justify-between items-center'>
+    <div className='px-6 md:px-10 py-5 h-[10vh] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50'>
       
-      <img src={assets.logo} alt="" className='w-16 sm:w-20 h-16 sm:h-20' />
+      <img src={assets.logo} alt="" className='w-16 sm:w-36' />
 
       <div className='gap-2 md:gap-6 items-center justify-center sm:flex hidden text-sm md:text-base'>
         <NavLink to="/" className='flex gap-1 items-center flex-col'>
@@ -87,16 +87,28 @@ function Navbar() {
           <p>Collection</p>
         </NavLink>
 
-        <NavLink to="/About" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
+        <NavLink to="/projects" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
+          <p>Projects</p>
+        </NavLink>
+
+        <NavLink to="/quizes" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
+          <p>Quizes</p>
+        </NavLink>
+
+        <NavLink to="/source-code" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
+          <p>Source Code</p>
+        </NavLink>
+
+        <NavLink to="/stack-images" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
+          <p>Stack images</p>
+        </NavLink>
+
+        <NavLink to="/about" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
           <p>About</p>
         </NavLink>
 
-        <NavLink to="/Contact" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
+        <NavLink to="/contact" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
           <p>Contact</p>
-        </NavLink>
-
-        <NavLink to="/payment" onClick={() => setVisible(false)} className='sidebar-menu w-full px-6 py-3 flex items-center cursor-pointer border-b border-gray-400 hover:bg-slate-200 hover:text-[#111]'>
-          <p>Admin Panel</p>
         </NavLink>
       </div>
       
