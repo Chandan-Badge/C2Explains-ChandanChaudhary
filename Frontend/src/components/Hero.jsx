@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div className='text-[#fff] flex flex-col items-center justify-center gap-4 mt-40'>
+    <div className='text-[#fff] flex flex-col items-center justify-center gap-4 mt-32 md:mt-40'>
 
       <div className='border border-[#b6bee5]/50 text-[#b6bee5] bg-[#181e33] text-xs md:text-sm py-1.5 px-4 rounded-full flex items-center justify-center group'>
         <p>🎉 Introducing our latest Development Projects.</p>
@@ -13,9 +13,9 @@ function Hero() {
 
       {/* <h1 className='text-7xl font-bold text-center'><span className='text-[#26ffe3]'>UI</span>Stack</h1> */}
       <h2 className='text-4xl lg:text-5xl font-bold text-center max-w-[80%]'>Ultimate Destination for Software Developer's</h2>
-      <p className='text-gray-400 text-base text-center max-w-[50vw]'>Accelerate your web development workflow, whether you're building sleek dashboards, dynamic landing pages, or scalable web applications, our components are built with accessibility, and modern design standards in mind.</p>
+      <p className='text-gray-400 text-base text-center max-w-[60vw] sm:max-w-[50vw]'>Accelerate your web development workflow, whether you're building sleek dashboards, dynamic landing pages, or scalable web applications, our components are built with accessibility, and modern design standards in mind.</p>
 
-      <div className='flex justify-center items-center gap-4 md:gap-8 lg:gap-20 mt-6 md:mt-10 text-base'>
+      <div className='flex justify-center items-center gap-4 md:gap-8 lg:gap-20 mt-6 lg:mt-10 text-sm sm:text-base'>
         <button className='border border-[#b6bee5]/50 hover:border-[#26ffe3] text-[#b6bee5] hover:text-gray-200 bg-[#181e33] py-2 px-6 md:px-8 lg:px-16 rounded-full flex items-center gap-1 md:gap-3 group'>
           Browse Components
           <svg xmlns="http://www.w3.org/2000/svg" className='w-3 fill-[#b6bee5] group-hover:fill-gray-200 pt-[2px]' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
@@ -26,7 +26,7 @@ function Hero() {
         </button>
       </div>
 
-      <ul className="flex flex-wrap gap-2 lg:gap-8 mt-4 md:mt-10 text-[#333] dark:text-[#fff]">
+      <ul className="flex flex-wrap gap-6 md:gap-4 lg:gap-8 mt-4 md:mt-10 text-[#333] dark:text-[#fff]">
           
           <li className="overflow-x-visible relative w-10 md:w-16 h-12 md:h-[72px] overflow-y-clip group text-center flex items-center justify-center">
               <div className="flex justify-center items-center w-8 md:w-12 h-8 md:h-12 rounded-full transition-all duration-150 absolute top-0 group-hover:origin-top text-white">

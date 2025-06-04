@@ -3,7 +3,7 @@ import Hero from '../components/hero';
 
 const Home = () => {
   return (
-    <div className='flex items-center justify-end flex-col w-[80vw] md:w-[75vw] lg:w-[85vw] right-0 absolute'>
+    <div className='flex items-center justify-center sm:justify-end flex-col w-full sm:w-[75vw] md:w-[80vw] lg:w-[85vw] right-0 absolute'>
       <Hero />
 
     </div>

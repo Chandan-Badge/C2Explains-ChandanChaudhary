@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <div className='px-6 md:px-10 py-5 h-[10vh] bg-[#0d1224] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50 fixed w-full z-10'>
       
-      <img src={assets.logo} alt="" className='w-32 sm:w-44' />
+      <img src={assets.logo} alt="" className='w-32 md:w-44' />
 
       {/* <div className='gap-2 md:gap-6 items-center justify-center sm:flex hidden text-sm md:text-base'>
         <NavLink to="/" className='flex gap-1 items-center flex-col'>
