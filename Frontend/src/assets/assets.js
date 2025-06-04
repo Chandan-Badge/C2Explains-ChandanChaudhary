@@ -1,4 +1,4 @@
-import logo from "./C2-Logo.png";
+import logo from "./C2-Logo-New Color.png";
 
 export const assets =  {
     logo,

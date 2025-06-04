@@ -12,7 +12,7 @@ import Orders from './pages/Orders';
 import Product from './pages/Product';
 import Contact from './pages/Contact';
 import Collection from './pages/Collection';
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 import SidebarMenu from './components/Sidebar-Menu';
 
 function App() {
