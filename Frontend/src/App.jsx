@@ -14,6 +14,11 @@ import Contact from './pages/Contact';
 import Collection from './pages/Collection';
 import Navbar from './components/Navbar';
 import SidebarMenu from './components/Sidebar-Menu';
+import Projects from './pages/Projects';
+import Quizes from './pages/Quizes';
+import Services from './pages/Services';
+import SourceCode from './pages/SourceCode';
+import StackImages from './pages/StackImages';
 
 function App() {
   return (
@@ -32,6 +37,11 @@ function App() {
           <Route path='/product/:productId' element={<Product/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/collection' element={<Collection/>} />
+          <Route path='/projects' element={<Projects/>} />
+          <Route path='/quizes' element={<Quizes/>} />
+          <Route path='/services' element={<Services/>} />
+          <Route path='/source-code' element={<SourceCode/>} />
+          <Route path='/stack-images' element={<StackImages/>} />
         </Routes>
 
     </div>
