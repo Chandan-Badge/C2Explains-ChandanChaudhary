@@ -14,7 +14,7 @@ function LatestCollection() {
       <Title text1={"LATEST"} text2={"COLLECTIONS"} />
 
       <p className='text-center m-auto text-xs sm:text-sm md:text-base text-gray-200'>
-        Here you can explore our latest collection.
+        Here you can explore our latest products.
       </p>
     </div>
   )
