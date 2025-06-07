@@ -1,11 +1,11 @@
 import { createContext } from "react";
-import { products } from "../assets/assets";
+import { products } from "../assets/assets.js";
 
 export const ShopContext = createContext();
 
-const ShopContextProvider = (probs) => {
+    const ShopContextProvider = (probs) => {
 
-    const currency = "₹";
+    const currency = "$";
 
     const value = {
         products, currency
