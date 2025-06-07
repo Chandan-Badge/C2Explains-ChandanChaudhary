@@ -55,4 +55,88 @@ export const products = [
         bestseller: true
     },
 
+    {
+        _id: "aaaa4",
+        name: "Beautiful Button",
+        description: "A beautiful button.",
+        price: 100,
+        image: [btn1],
+        category: "button",
+        subCategory: "frontend",
+        date: 1716634345448,
+        bestseller: true
+    },
+
+    {
+        _id: "aaaa4",
+        name: "Beautiful Button",
+        description: "A beautiful button.",
+        price: 100,
+        image: [btn1],
+        category: "button",
+        subCategory: "frontend",
+        date: 1716634345448,
+        bestseller: true
+    },
+
+    {
+        _id: "aaaa4",
+        name: "Beautiful Button",
+        description: "A beautiful button.",
+        price: 100,
+        image: [btn1],
+        category: "button",
+        subCategory: "frontend",
+        date: 1716634345448,
+        bestseller: true
+    },
+
+    {
+        _id: "aaaa4",
+        name: "Beautiful Button",
+        description: "A beautiful button.",
+        price: 100,
+        image: [btn1],
+        category: "button",
+        subCategory: "frontend",
+        date: 1716634345448,
+        bestseller: true
+    },
+
+    {
+        _id: "aaaa4",
+        name: "Beautiful Button",
+        description: "A beautiful button.",
+        price: 100,
+        image: [btn1],
+        category: "button",
+        subCategory: "frontend",
+        date: 1716634345448,
+        bestseller: true
+    },
+
+    {
+        _id: "aaaa4",
+        name: "Beautiful Button",
+        description: "A beautiful button.",
+        price: 100,
+        image: [btn1],
+        category: "button",
+        subCategory: "frontend",
+        date: 1716634345448,
+        bestseller: true
+    },
+
+    {
+        _id: "aaaa4",
+        name: "Beautiful Button",
+        description: "A beautiful button.",
+        price: 100,
+        image: [btn1],
+        category: "button",
+        subCategory: "frontend",
+        date: 1716634345448,
+        bestseller: true
+    },
+
 ]

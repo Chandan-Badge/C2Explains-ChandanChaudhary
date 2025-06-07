@@ -5,7 +5,7 @@ export const ShopContext = createContext();
 
     const ShopContextProvider = (probs) => {
 
-    const currency = "$";
+    const currency = '₹';
 
     const value = {
         products, currency
