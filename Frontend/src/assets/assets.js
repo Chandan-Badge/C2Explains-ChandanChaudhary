@@ -124,7 +124,7 @@ export const products = [
         _id: "aaaa9",
         name: "Colorful cursor Animation",
         description: "A beautiful Cursor.",
-        price: 0,
+        price: 100,
         image: [p_img9],
         category: "Cursor",
         subCategory: "frontend",
