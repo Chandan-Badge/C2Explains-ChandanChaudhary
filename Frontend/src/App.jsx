@@ -19,6 +19,7 @@ import Quizes from './pages/Quizes';
 import Services from './pages/Services';
 import SourceCode from './pages/SourceCode';
 import StackImages from './pages/StackImages';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
           <Route path='/source-code' element={<SourceCode/>} />
           <Route path='/stack-images' element={<StackImages/>} />
         </Routes>
+
+        <Footer />
 
     </div>
   )
