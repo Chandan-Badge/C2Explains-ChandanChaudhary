@@ -22,7 +22,7 @@ function BestSeller() {
             </div>
 
             {/* Rendring best products */}
-            <div className='grid grid-cols-2 md:grid-cols-4 gap-8 gap-y-6'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 gap-10 gap-y-6'>
                 {
                 bestSeller.map((item, index) => (
                     <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />

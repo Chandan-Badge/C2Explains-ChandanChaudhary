@@ -9,7 +9,7 @@ const ProductItem = ({id, image, name, price}) => {
 
     return (
         <Link to={`/product/${id}`} className='text-gray-400 cursor-pointer'>
-            <div className='overflow-hidden w-36 md:w-56 h-36 md:h-56 flex items-center justify-center'>
+            <div className='overflow-hidden w-32 lg:w-[12vw] h-32 lg:h-[12vw] flex items-center justify-center'>
                 <img src={image[0]} alt="" className='hover:scale-110 transition-all ease-in-out' />
             </div>
 
