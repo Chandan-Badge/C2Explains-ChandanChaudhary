@@ -23,9 +23,26 @@ function Collection() {
         }
     }
 
+    const toggleType = (e) => {
+      if(type.includes(e.target.value)) {
+        setType(prev => prev.filter(item => item !== e.target.value))
+      }
+        else {
+          setType(prev => [...prev, e.target.value])
+        }
+    }
+
     useEffect(() => {
       setfilterProducts(products);
     })
+
+    useEffect(() => {
+      console.log(category);
+    }, [category]);
+
+    useEffect(() => {
+      console.log(type);
+    }, [type]);
 
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 mt-16 text-[#fff] pl-64'>
@@ -39,47 +56,47 @@ function Collection() {
 
           <div className='flex flex-col gap-2 text-sm font-light text-gray-300'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"All"} /> All
+              <input className='w-3' type="checkbox" value={"All"} onChange={toggleCategory} /> All
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Button"} /> Button
+              <input className='w-3' type="checkbox" value={"Button"} onChange={toggleCategory} /> Button
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Card"} /> Card
+              <input className='w-3' type="checkbox" value={"Card"} onChange={toggleCategory} /> Card
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Loaders"} /> Loaders
+              <input className='w-3' type="checkbox" value={"Loaders"} onChange={toggleCategory} /> Loaders
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Radio_Buttons"} /> Radio Buttons
+              <input className='w-3' type="checkbox" value={"Radio_Buttons"} onChange={toggleCategory} /> Radio Buttons
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Checkbox"} /> Checkbox
+              <input className='w-3' type="checkbox" value={"Checkbox"} onChange={toggleCategory} /> Checkbox
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Input"} /> Input
+              <input className='w-3' type="checkbox" value={"Input"} onChange={toggleCategory} /> Input
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Switch"} /> Switch
+              <input className='w-3' type="checkbox" value={"Switch"} onChange={toggleCategory} /> Switch
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Form"} /> Form
+              <input className='w-3' type="checkbox" value={"Form"} onChange={toggleCategory} /> Form
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Tooltip"} /> Tooltip
+              <input className='w-3' type="checkbox" value={"Tooltip"} onChange={toggleCategory} /> Tooltip
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Background"} /> Background
+              <input className='w-3' type="checkbox" value={"Background"} onChange={toggleCategory} /> Background
             </p>
 
           </div>
@@ -92,15 +109,16 @@ function Collection() {
 
           <div className='flex flex-col gap-2 text-sm font-light text-gray-300'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Button"} /> Paid
+              <input className='w-3' type="checkbox" value={"Paid"} onChange={toggleType} /> Paid
             </p>
 
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={"Card"} /> Free
+              <input className='w-3' type="checkbox" value={"Free"} onChange={toggleType} /> Free
             </p>
 
           </div>
         </div>
+
       </div>
       
       {/* Products */}
