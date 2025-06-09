@@ -8,7 +8,7 @@ function Collection() {
     const { products } = useContext(ShopContext);
     const [showFilter, setShowFilter] = useState(false);
 
-    const [filterProducts, setfilterProducts] = useState([]);
+    const [filterProducts, setFilterProducts] = useState([]);
 
     const [category, setCategory] = useState([]);
     const [type, setType] = useState([]);
@@ -32,17 +32,35 @@ function Collection() {
         }
     }
 
-    useEffect(() => {
-      setfilterProducts(products);
-    })
+    const applyFilter = () => {
+      let productsCopy = products.slice();
+
+      if(category.length > 0) {
+        productsCopy = productsCopy.filter(item => category.includes(item.category));
+      }
+
+      if(type.length > 0) {
+        productsCopy = productsCopy.filter(item => type.includes(item.type));
+      }
+
+       setFilterProducts(productsCopy);
+    }
 
     useEffect(() => {
-      console.log(category);
-    }, [category]);
+      setFilterProducts(products);
+    }, []);
+
+    // useEffect(() => {
+    //   console.log(category);
+    // }, [category]);
+
+    // useEffect(() => {
+    //   console.log(type);
+    // }, [type]);
 
     useEffect(() => {
-      console.log(type);
-    }, [type]);
+      applyFilter();
+    }, [category, type])
 
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 mt-16 text-[#fff] pl-64'>
@@ -128,9 +146,9 @@ function Collection() {
           <Title text1={"All"} text2={"COLLECTIONS"} />
           {/* Product sort */}
           <select className='border-2 border-gray-500 text-gray-200 text-sm px-2 bg-transparent'>
-            <option value="relavent">Sort by: Relavent</option>
-            <option value="low-high">Sort by: Low to High</option>
-            <option value="high-low">Sort by: High to Low</option>
+            <option className="bg-[#0d1224]" value="relavent">Sort by: Relavent</option>
+            <option className="bg-[#0d1224]" value="low-high">Sort by: Low to High</option>
+            <option className="bg-[#0d1224]" value="high-low">Sort by: High to Low</option>
           </select>
 
         </div>
