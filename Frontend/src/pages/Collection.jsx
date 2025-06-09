@@ -13,6 +13,16 @@ function Collection() {
     const [category, setCategory] = useState([]);
     const [type, setType] = useState([]);
 
+
+    const toggleCategory = (e) => {
+      if(category.includes(e.target.value)) {
+        setCategory(prev => prev.filter(item => item !== e.target.value))
+      }
+        else {
+          setCategory(prev => [...prev, e.target.value])
+        }
+    }
+
     useEffect(() => {
       setfilterProducts(products);
     })

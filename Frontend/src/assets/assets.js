@@ -32,6 +32,7 @@ export const products = [
         image: [p_img1],
         category: "animation",
         subCategory: "frontend",
+        type: "free",
         date: 1716634345448,
         bestseller: true
     },
@@ -44,6 +45,7 @@ export const products = [
         image: [p_img2],
         category: "js",
         subCategory: "frontend",
+        type: "paid",
         date: 1716634345448,
         bestseller: true
     },
@@ -56,6 +58,7 @@ export const products = [
         image: [p_img3],
         category: "button",
         subCategory: "frontend",
+        type: "free",
         date: 1716634345448,
         bestseller: false
     },
@@ -68,6 +71,7 @@ export const products = [
         image: [p_img4],
         category: "button",
         subCategory: "frontend",
+        type: "free",
         date: 1716634345448,
         bestseller: false
     },
@@ -80,6 +84,7 @@ export const products = [
         image: [p_img5],
         category: "button",
         subCategory: "frontend",
+        type: "free",
         date: 1716634345448,
         bestseller: false
     },
@@ -92,6 +97,7 @@ export const products = [
         image: [p_img6],
         category: "button",
         subCategory: "frontend",
+        type: "free",
         date: 1716634345448,
         bestseller: false
     },
@@ -104,6 +110,7 @@ export const products = [
         image: [p_img7],
         category: "Card",
         subCategory: "frontend",
+        type: "free",
         date: 1716634345448,
         bestseller: false
     },
@@ -116,6 +123,7 @@ export const products = [
         image: [p_img8],
         category: "Card",
         subCategory: "frontend",
+        type: "free",
         date: 1716634345448,
         bestseller: true
     },
@@ -128,6 +136,7 @@ export const products = [
         image: [p_img9],
         category: "Cursor",
         subCategory: "frontend",
+        type: "paid",
         date: 1716634345448,
         bestseller: true
     },
