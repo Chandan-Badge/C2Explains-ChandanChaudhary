@@ -16,3 +16,13 @@ a.active .menu {
     background-color: #00008b;
     color: white;
 }
+
+.show {
+  display: flex;
+  visibility: visible;
+}
+
+.not-show {
+  display: hidden;
+  visibility: hidden;
+}

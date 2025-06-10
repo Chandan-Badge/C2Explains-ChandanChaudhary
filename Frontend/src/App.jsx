@@ -27,7 +27,7 @@ function App() {
     <div className='font-[poppins]'>
 
         <Navbar />
-        <SearchBar />
+        {/* <SearchBar /> */}
         <SidebarMenu />
 
         <Routes>

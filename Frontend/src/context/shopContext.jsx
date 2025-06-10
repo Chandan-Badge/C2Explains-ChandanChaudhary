@@ -8,11 +8,13 @@ export const ShopContext = createContext();
     const currency = '₹';
 
     const [search, setSearch] = useState("");
-    const [showSearch, setShowSearch] = useState(true);
+    const [showSearch, setShowSearch] = useState(false);
+    const [searchBtn, setSearchBtn] = useState(true);
 
     const value = {
         products, currency,
-        search, setSearch, showSearch, setShowSearch
+        search, setSearch, showSearch, setShowSearch,
+        searchBtn, setSearchBtn
     }
 
     return (
