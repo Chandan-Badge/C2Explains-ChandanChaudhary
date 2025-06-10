@@ -20,12 +20,14 @@ import Services from './pages/Services';
 import SourceCode from './pages/SourceCode';
 import StackImages from './pages/StackImages';
 import Footer from './components/Footer';
+import SearchBar from './components/SearchBar';
 
 function App() {
   return (
     <div className='font-[poppins]'>
 
         <Navbar />
+        <SearchBar />
         <SidebarMenu />
 
         <Routes>
