@@ -18,11 +18,12 @@ a.active .menu {
 }
 
 .show {
-  display: flex;
+  /* display: flex; */
   visibility: visible;
 }
 
 .not-show {
-  display: hidden;
+  /* display: hidden; */
+  position: absolute;
   visibility: hidden;
 }
