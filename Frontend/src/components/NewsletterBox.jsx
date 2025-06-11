@@ -8,7 +8,7 @@ function NewsletterBox() {
     }
 
   return (
-    <div className='text-center my-10 flex flex-col gap-2'>
+    <div className='text-center my-10 flex flex-col gap-2 w-max h-max'>
         <p className='text-gray-300 font-medium text-2xl'>Subscribe now & get 20% off</p>
         <p className='m-auto text-xs sm:text-sm md:text-base text-gray-300'>Subscribe and get latest notification.</p>
 

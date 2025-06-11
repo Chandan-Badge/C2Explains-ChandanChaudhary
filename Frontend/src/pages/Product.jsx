@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { ShopContext } from '../context/shopContext';
+import NewsletterBox from "../components/NewsletterBox.jsx";
 
 function Product() {
 
@@ -29,8 +30,14 @@ function Product() {
 
   return productData ? (
     <div className='mt-28 w-full flex justify-end px-24 text-[#fff]'>
-      <div className='w-[85%] bg-[#181e33] flex flex-col border border-[#b6bee5]/50 rounded-lg'>
-        <div className='flex justify-start items-start gap-10 h-[90vh] px-10 py-16'>
+      <div className='w-[85%] flex flex-col justify-center items-center'>
+
+        <Link to={"/collection"} className='w-max mb-3 flex items-center self-start gap-1 text-sm hover:bg-[#181e33] transition-all px-4 py-2 rounded-full'>
+          <svg xmlns="http://www.w3.org/2000/svg" className='w-5' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="M360-240 120-480l240-240 56 56-144 144h568v80H272l144 144-56 56Z"/></svg>
+          Go back
+        </Link>
+
+        <div className='flex justify-start items-start bg-[#181e33]/50 border border-[#b6bee5]/50 rounded-lg gap-10 h-[90vh] px-10 py-16'>
 
           {/* Product Image */}
           <div className='h-[90%] w-[45%] bg-[#0d1224] rounded-xl flex justify-center items-center'>
@@ -41,7 +48,7 @@ function Product() {
           <div className='h-[80%] w-[50%] flex flex-col gap-3 pr-5'>
             <h1 className='text-5xl font-bold'>{productData.name}</h1>
             <p className='text-base font-normal text-[#b6bee5]'>{productData.description}</p>
-            <h2 className='text-2xl font-medium'>Price: ₹{productData.price} {(productData.price == 0) && <span className='text-[#b6bee5] text-xl'>(Free)</span>}</h2>
+            <h2 className='text-2xl font-medium flex'>Price: ₹{productData.price} {(productData.price == 0) && <span className='text-[#b6bee5] text-xl ml-1'>(Free)</span>}</h2>
 
             <div className='flex gap-5 mt-4'>
               <button className='bg-[#000] text-[#fff] text-xl rounded-full px-6 py-3 w-max font-medium font-sans flex gap-2 hover:-translate-y-1 transition-all duration-200 ease-in-out'>
@@ -59,9 +66,12 @@ function Product() {
         </div>
 
         {/* Related Product */}
-        <div className='flex'>
-
+        <div className='flex bg-[#181e33]/50 border border-[#b6bee5]/50 rounded-lg mt-12 w-[100%] px-12 py-4 justify-center'>
+          <h1 className='text-3xl font-bold'>Related Products</h1>
         </div>
+        
+        <NewsletterBox />
+
       </div>
     </div>
   ) : <div className='opacity-0'></div>
