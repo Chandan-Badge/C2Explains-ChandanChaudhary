@@ -41,7 +41,19 @@ function Product() {
           <div className='h-[80%] w-[50%] flex flex-col gap-3 pr-5'>
             <h1 className='text-5xl font-bold'>{productData.name}</h1>
             <p className='text-base font-normal text-[#b6bee5]'>{productData.description}</p>
-            <h2 className='text-2xl font-medium'>Price: ₹{productData.price} <span className='text-[#6b7280] text-xl'>(Free)</span></h2>
+            <h2 className='text-2xl font-medium'>Price: ₹{productData.price} {(productData.price == 0) && <span className='text-[#b6bee5] text-xl'>(Free)</span>}</h2>
+
+            <div className='flex gap-5 mt-4'>
+              <button className='bg-[#000] text-[#fff] text-xl rounded-full px-6 py-3 w-max font-medium font-sans flex gap-2 hover:-translate-y-1 transition-all duration-200 ease-in-out'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='fill-[#fff] w-5' viewBox="0 0 448 512"><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                Buy Now
+              </button>
+
+              <button className='bg-[#fff] text-[#0d1224] text-xl rounded-full px-6 py-3 w-max font-medium font-sans flex gap-2 hover:-translate-y-1 transition-all duration-200 ease-in-out'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='fill-[#0d1224] w-6' viewBox="0 -960 960 960"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+                Add to Cart
+              </button>
+            </div>
           </div>
 
         </div>
