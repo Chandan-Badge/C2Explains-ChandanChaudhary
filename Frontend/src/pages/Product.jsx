@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ShopContext } from '../context/shopContext';
 import NewsletterBox from "../components/NewsletterBox.jsx";
+import ReletedProducts from '../components/ReletedProducts.jsx';
 
 function Product() {
 
@@ -66,9 +67,7 @@ function Product() {
         </div>
 
         {/* Related Product */}
-        <div className='flex bg-[#181e33]/50 border border-[#b6bee5]/50 rounded-lg mt-12 w-[100%] px-12 py-4 justify-center'>
-          <h1 className='text-3xl font-bold'>Related Products</h1>
-        </div>
+        <ReletedProducts category={productData.category} subCategory={productData.subCategory} />
         
         <NewsletterBox />
 
