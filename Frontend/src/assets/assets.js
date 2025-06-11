@@ -27,7 +27,7 @@ export const products = [
     {
         _id: "aaaaa1",
         name: "Animated border",
-        description: "A beautiful border.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 0,
         image: [p_img1],
         category: "Animation",
@@ -40,7 +40,7 @@ export const products = [
     {
         _id: "aaaa2",
         name: "Autotyper",
-        description: "A beautiful typer.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 25,
         image: [p_img2],
         category: "JS",
@@ -53,7 +53,7 @@ export const products = [
     {
         _id: "aaaa3",
         name: "Yellow Button",
-        description: "A beautiful button.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 0,
         image: [p_img3],
         category: "Button",
@@ -66,7 +66,7 @@ export const products = [
     {
         _id: "aaaa4",
         name: "Repeat Button",
-        description: "A beautiful button.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 0,
         image: [p_img4],
         category: "Button",
@@ -79,7 +79,7 @@ export const products = [
     {
         _id: "aaaa5",
         name: "Colorful Button",
-        description: "A beautiful button.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 0,
         image: [p_img5],
         category: "Button",
@@ -92,7 +92,7 @@ export const products = [
     {
         _id: "aaaa6",
         name: "Professional Button",
-        description: "A beautiful button.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 0,
         image: [p_img6],
         category: "Button",
@@ -105,7 +105,7 @@ export const products = [
     {
         _id: "aaaa7",
         name: "Cool Card",
-        description: "A beautiful card.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 0,
         image: [p_img7],
         category: "Card",
@@ -118,7 +118,7 @@ export const products = [
     {
         _id: "aaaa8",
         name: "Colorfull card",
-        description: "A beautiful card.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 0,
         image: [p_img8],
         category: "Card",
@@ -131,7 +131,7 @@ export const products = [
     {
         _id: "aaaa9",
         name: "Colorful cursor Animation",
-        description: "A beautiful Cursor.",
+        description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
         price: 100,
         image: [p_img9],
         category: "Cursor",
