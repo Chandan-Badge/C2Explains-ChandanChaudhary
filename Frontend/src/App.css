@@ -31,12 +31,12 @@ a.active .menu {
 }
 
 /* Dark & Light mode */
-.show1 {
+.show-btn {
   display: flex !important;
   visibility: visible !important;
 }
 
-.not-show1 {
+.not-show-btn {
   display: hidden !important;
   visibility: hidden !important;
 }
