@@ -29,3 +29,14 @@ a.active .menu {
   position: absolute;
   visibility: hidden;
 }
+
+/* Dark & Light mode */
+.show1 {
+  display: flex !important;
+  visibility: visible !important;
+}
+
+.not-show1 {
+  display: hidden !important;
+  visibility: hidden !important;
+}
