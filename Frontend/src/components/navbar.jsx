@@ -174,9 +174,9 @@ function Navbar() {
           
           <div className={`group-hover:block hidden {profile} dropdown-menu -right-5 pt-4 absolute`}>
             <div className='bg-[#0d1224] text-gray-300 rounded border border-[#fff] flex flex-col gap-2 w-36 px-3 py-4'>
-              <p className='cursor-pointer hover:text-[#fff] hover:bg-gray-700 px-4 py-1 rounded'>My Profile</p>
-              <p className='cursor-pointer hover:text-[#fff] hover:bg-gray-700 px-4 py-1 rounded'>Orders</p>
-              <p className='cursor-pointer text-red-500 hover:text-[#fff] hover:bg-red-700 px-4 py-1 rounded'>Logout</p>
+              <p className='cursor-pointer hover:text-[#fff] hover:bg-gray-700/50 px-4 py-1 rounded transition-all ease-in-out duration-200'>My Profile</p>
+              <p className='cursor-pointer hover:text-[#fff] hover:bg-gray-700/50 px-4 py-1 rounded transition-all ease-in-out duration-200'>Orders</p>
+              <p className='cursor-pointer text-red-500 hover:text-[#fff] hover:bg-red-700 px-4 py-1 rounded transition-all ease-in-out duration-200'>Logout</p>
             </div>
           </div>
 
