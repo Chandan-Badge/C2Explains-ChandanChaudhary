@@ -96,11 +96,11 @@ function Navbar() {
 
       <div className='flex gap-5 sm:gap-8 items-center justify-center'>
         <SearchBar />
-        <button onClick={manageSearch} className={`${turnBtn} group relative p-1.5 sm:p-2 rounded-full hover:bg-[#181e33] cursor-pointer transition-all duration-300 hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95`}>
+        <button onClick={manageSearch} className={`${turnBtn} group relative p-1.5 sm:p-2 rounded-full hover:bg-[#181e33] cursor-pointer hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95`}>
           <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3]`} viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
 
           <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 mb-2 left-1/2 transform -translate-x-1/2 z-50 -bottom-10 md:-bottom-12">
-              <div class="bg-black/70 backdrop-blur-md border-[#181e33] text-[#26ffe3] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
+              <div class="bg-black/40 backdrop-blur-md border-[#181e33] text-[#fff] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
               Search
                   <div class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
                       <div class="border-4 border-transparent border-t-black/85"></div>
@@ -116,7 +116,7 @@ function Navbar() {
 
 
                 <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 mb-2 left-1/2 transform -translate-x-1/2 z-50 -bottom-10 md:-bottom-12">
-                    <div class="bg-black/70 backdrop-blur-md border-[#181e33] text-[#26ffe3] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
+                    <div class="bg-black/40 backdrop-blur-md border-[#181e33] text-[#fff] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
                     Dark Mode
                         <div class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
                             <div class="border-4 border-transparent border-t-black/85"></div>
@@ -133,7 +133,7 @@ function Navbar() {
 
 
                 <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 mb-2 left-1/2 transform -translate-x-1/2 z-50 -bottom-10 md:-bottom-12">
-                    <div class="bg-black/70 backdrop-blur-md border-[#181e33] text-[#26ffe3] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
+                    <div class="bg-black/40 backdrop-blur-md border-[#181e33] text-[#fff] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
                     Light Mode
                         <div class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
                             <div class="border-4 border-transparent border-t-black/85"></div>
@@ -151,7 +151,7 @@ function Navbar() {
           </div>
 
           <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 mb-2 left-1/2 transform -translate-x-1/2 z-50 -bottom-10 md:-bottom-12">
-              <div class="bg-black/70 backdrop-blur-md border-[#181e33] text-[#26ffe3] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
+              <div class="bg-black/40 backdrop-blur-md border-[#181e33] text-[#fff] text-xs sm:text-sm px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg whitespace-nowrap font-light tracking-wider shadow-[0_0_15px_rgba(0,0,0,0.3)] border">
               Cart
                   <div class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
                       <div class="border-4 border-transparent border-t-black/85"></div>
@@ -173,7 +173,7 @@ function Navbar() {
           </div> */}
           
           <div className={`group-hover:block hidden {profile} dropdown-menu -right-5 pt-4 absolute`}>
-            <div className='bg-[#0d1224] text-gray-300 rounded border border-[#fff] flex flex-col gap-2 w-36 px-3 py-4'>
+            <div className='bg-[#0d1224] text-gray-300 rounded border border-[#b6bee5]/50 flex flex-col gap-2 w-36 px-3 py-4'>
               <p className='cursor-pointer hover:text-[#fff] hover:bg-gray-700/50 px-4 py-1 rounded transition-all ease-in-out duration-200'>My Profile</p>
               <p className='cursor-pointer hover:text-[#fff] hover:bg-gray-700/50 px-4 py-1 rounded transition-all ease-in-out duration-200'>Orders</p>
               <p className='cursor-pointer text-red-500 hover:text-[#fff] hover:bg-red-700 px-4 py-1 rounded transition-all ease-in-out duration-200'>Logout</p>

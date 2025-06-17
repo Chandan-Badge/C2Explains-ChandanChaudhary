@@ -132,7 +132,7 @@ export const products = [
         _id: "aaaa9",
         name: "Colorful cursor Animation",
         description: "This project is a visually engaging download button component with dynamic animations. The button features a sleek design with a white background, rounded corners, and a shadow effect. It includes an icon section and a label section. The icon part displays a download icon with circular radial gradients, while the label part shows the download text and a counter animation. Upon activation, the button initiates smooth animations, including rotating arrows and scaling effects.",
-        price: 100,
+        price: 50,
         image: [p_img9],
         category: "Cursor",
         subCategory: "frontend",

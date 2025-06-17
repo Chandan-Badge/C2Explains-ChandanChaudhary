@@ -22,6 +22,8 @@ import StackImages from './pages/StackImages';
 import Footer from './components/Footer';
 import SearchBar from './components/SearchBar';
 
+ import { ToastContainer, toast } from 'react-toastify';
+
 function App() {
   return (
     <div className='font-[poppins]'>
