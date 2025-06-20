@@ -3,7 +3,7 @@ import { products } from "../assets/assets.js";
 
 export const ShopContext = createContext();
 
-    const ShopContextProvider = (probs) => {
+const ShopContextProvider = (probs) => {
 
     const currency = '₹';
 

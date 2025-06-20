@@ -15,6 +15,7 @@ function Collection() {
 
     const [sortType, setSortType] = useState("relavent");
 
+    // Toggle according to there category
     const toggleCategory = (e) => {
       if(category.includes(e.target.value)) {
         setCategory(prev => prev.filter(item => item !== e.target.value))
@@ -24,6 +25,7 @@ function Collection() {
         }
     }
 
+    // Toggle according to free or paid
     const toggleType = (e) => {
       if(type.includes(e.target.value)) {
         setType(prev => prev.filter(item => item !== e.target.value))
@@ -63,6 +65,7 @@ function Collection() {
       applyFilter();
     }, [category, type]);
 
+    // Sort product on the basis of there price
     const sortProduct = () => {
 
       let fpCopy = filterProducts.slice();
@@ -92,14 +95,15 @@ function Collection() {
       {/* Filter option */}
       <div className='min-w-40'>
         <p className='my-2 text-xl flex items-center cursor-pointer gap-2 font-bold'>FILTER</p>
+
         {/* Category Filter */}
         <div className={`border border-gray-400 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} sm:block`}>
           <p className='mb-3 text-start font-medium'>CATEGORIES</p>
 
           <div className='flex flex-col gap-2 text-sm font-light text-gray-300'>
-            <p className='flex gap-2'>
+            {/* <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={"All"} onChange={toggleCategory} /> All
-            </p>
+            </p> */}
 
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={"Button"} onChange={toggleCategory} /> Button
@@ -168,6 +172,7 @@ function Collection() {
 
         <div className='flex justify-between text-base sm:text-2xl mb-4'>
           <Title text1={"All"} text2={"COLLECTIONS"} />
+          
           {/* Product sort */}
           <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-500 text-gray-200 text-sm px-2 bg-[#0d1224]'>
             <option className="" value="relavent">Sort by: Relavent</option>
