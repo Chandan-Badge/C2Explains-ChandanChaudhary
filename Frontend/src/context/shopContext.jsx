@@ -31,6 +31,21 @@ export const ShopContext = createContext();
         setCartItems(cartData);
     }
 
+    const getCartCount = () => {
+        let totalCount = 0;
+        for(const items in cartItems) {
+            try {
+                if(cartItems[items] > 0) {
+                    totalCount += cartItems[items];
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        return totalCount;
+    }
+
+
     useEffect(() => {
         console.log(cartItems); 
     }, [cartItems]);
@@ -39,7 +54,8 @@ export const ShopContext = createContext();
         products, currency,
         search, setSearch, showSearch, setShowSearch,
         searchBtn, setSearchBtn,
-        cartItems, addToCart
+        cartItems, addToCart,
+        getCartCount
     }
 
     return (
