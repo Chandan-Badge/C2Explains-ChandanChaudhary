@@ -33,10 +33,10 @@ export const ShopContext = createContext();
 
     const getCartCount = () => {
         let totalCount = 0;
-        for(const items in cartItems) {
+        for(const item in cartItems) {
             try {
-                if(cartItems[items] > 0) {
-                    totalCount += cartItems[items];
+                if(cartItems[item] > 0) {
+                    totalCount += cartItems[item];
                 }
             } catch (error) {
                 console.log(error);
