@@ -26,7 +26,7 @@ function Footer() {
                     <img src={logo} className="w-full" alt="Logo" />
                 </div>
 
-                <div className="not-show-bottom flex flex-wrap items-center justify-end text-sm font-medium mb-1 text-gray-300 dark:text-gray-400 gap-4 md:gap-6 gap-y-2">
+                <div className="not-show-bottom flex flex-wrap items-center justify-around text-sm font-medium mb-1 text-gray-300 dark:text-gray-400 gap-4 md:gap-6 gap-y-2">
                 
                     <Link onClick={scrollUp} to={"/profile"} className="about-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">About</Link>
                 

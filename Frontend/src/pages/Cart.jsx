@@ -26,7 +26,7 @@ function Cart() {
   }, [cartData]);
 
   return (
-    <div className=' pt-14'>
+    <div className='mt-32 md:mt-36 sm:ml-32 md:ml-56 px-8'>
       
       <div className='text-2xl mb-4'>
         <Title text1={"Your"} text2={"Cart"}/>

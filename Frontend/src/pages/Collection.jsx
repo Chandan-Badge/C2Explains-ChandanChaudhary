@@ -90,7 +90,7 @@ function Collection() {
     }, [sortType]);
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 mt-16 text-[#fff] pl-64'>
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-12 md:px-0 sm:ml-32 md:ml-56'>
 
       {/* Filter option */}
       <div className='min-w-40'>
