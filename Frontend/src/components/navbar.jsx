@@ -112,7 +112,7 @@ function Navbar() {
         <button onClick={changeBtn} className={`relative group hidden ${turnDark}`}>
             <div class="p-1.5 sm:p-2 rounded-full hover:bg-[#181e33] cursor-pointer transition-all duration-300 hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95">
             
-            <svg onClick={() => setTheme(theme === "dark" ? "light" : "dark")}  xmlns="http://www.w3.org/2000/svg" class="feather feather-moon w-5 sm:w-7 h-5 sm:h-7 text-[#e3e3e3] transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg onClick={() => setTheme(theme === "dark" ? "light" : "dark")}  xmlns="http://www.w3.org/2000/svg" className="feather feather-moon w-5 sm:w-7 h-5 sm:h-7 text-[#e3e3e3] transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 
 
                 <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 mb-2 left-1/2 transform -translate-x-1/2 z-50 -bottom-10 md:-bottom-12">
@@ -129,7 +129,7 @@ function Navbar() {
         <button onClick={changeBtn} className={`relative group hidden ${turnLight}`}>
             <div class="p-1.5 sm:p-2 rounded-full hover:bg-[#181e33] cursor-pointer transition-all duration-300 hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95">
             
-                <svg onClick={() => setTheme(theme === "light" ? "dark" : "dark")} xmlns="http://www.w3.org/2000/svg" class="feather feather-sun w-5 sm:w-7 h-5 sm:h-7 text-[#e3e3e3] transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg onClick={() => setTheme(theme === "light" ? "dark" : "dark")} xmlns="http://www.w3.org/2000/svg" className="feather feather-sun w-5 sm:w-7 h-5 sm:h-7 text-[#e3e3e3] transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
 
 
                 <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 mb-2 left-1/2 transform -translate-x-1/2 z-50 -bottom-10 md:-bottom-12">

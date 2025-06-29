@@ -39,7 +39,7 @@ function Cart() {
 
             return (
               <div key={index} className='py-4 border-b border-[#b6bee5]/50 text-gray-300 items-center gap-4 flex justify-between px-4'> 
-                <div className='flex gap-6 items-start '>
+                <div className='flex gap-6 items-center '>
                   <img src={productData.image} alt="" className='w-20' />
 
                   <div>
@@ -58,7 +58,7 @@ function Cart() {
                       type="number" 
                       min={1} 
                       defaultValue={item.quantity} 
-                      className='border-10 max-w-12 pl-2 px-1 py-1 bg-slate-700 rounded border border-[#b6bee5]/50' />
+                      className='border-10 max-w-14 pl-3 px-1 py-1 bg-[#0d1224] rounded border border-[#b6bee5]/50' />
 
                     <div className='flex flex-col gap-0 justify-around items-center absolute top-0 right-0.5 pointer-events-none bg-none'>
                       <svg xmlns="http://www.w3.org/2000/svg" className='w-5 relative bottom-0' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m280-400 200-200 200 200H280Z"/></svg>
@@ -70,7 +70,8 @@ function Cart() {
                     onClick={() => updateQuantity(item._id, 0)} 
                     xmlns="http://www.w3.org/2000/svg" 
                     className={`w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3] cursor-pointer`} 
-                    viewBox="0 -960 960 960" fill="#e3e3e3">
+                    viewBox="0 -960 960 960" 
+                    fill="#e3e3e3">
                     <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
                   </svg>
                 </div>

@@ -5,7 +5,7 @@ function Hero() {
     <div className='text-[#fff] flex flex-col items-center justify-center gap-4 mt-32 md:mt-40'>
 
       <div className='border border-[#b6bee5]/50 text-[#b6bee5] bg-[#181e33] text-xs md:text-sm py-1.5 px-4 rounded-full flex items-center justify-center group'>
-        <p>🎉 Introducing our latest Development Projects.</p>
+        <p>🎉 Introducing my latest Development Projects.</p>
         <a href="https://stackgallery-chandanchaudhary.netlify.app" target='_black' className='text-blue-500 flex pl-1 text-center'>Show more
           <svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-blue-500 ml-1' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m700-300-57-56 84-84H120v-80h607l-83-84 57-56 179 180-180 180Z"/></svg>
         </a> 
