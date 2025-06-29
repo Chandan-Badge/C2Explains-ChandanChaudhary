@@ -97,7 +97,7 @@ function Collection() {
         <p className='my-2 text-xl flex items-center cursor-pointer gap-2 font-bold'>FILTER</p>
 
         {/* Category Filter */}
-        <div className={`border border-gray-400 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} sm:block`}>
+        <div className={`border border-gray-400 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} md:block`}>
           <p className='mb-3 text-start font-medium'>CATEGORIES</p>
 
           <div className='flex flex-col gap-2 text-sm font-light text-gray-300'>
@@ -150,7 +150,7 @@ function Collection() {
         </div>
 
         {/* Sub-Category Filter */}
-        <div className={`border border-gray-400 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} sm:block`}>
+        <div className={`border border-gray-400 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} md:block`}>
           <p className='mb-3 text-start font-medium'>TYPE</p>
 
           <div className='flex flex-col gap-2 text-sm font-light text-gray-300'>
@@ -174,7 +174,7 @@ function Collection() {
           <Title text1={"All"} text2={"COLLECTIONS"} />
           
           {/* Product sort */}
-          <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-500 text-gray-200 text-sm px-2 bg-[#0d1224]'>
+          <select onChange={(e) => setSortType(e.target.value)} className='border-2 max-h-10 border-gray-500 text-gray-200 text-sm px-2 bg-[#0d1224]'>
             <option className="" value="relavent">Sort by: Relavent</option>
             <option className="" value="low-high">Sort by: Low to High</option>
             <option className="" value="high-low">Sort by: High to Low</option>
