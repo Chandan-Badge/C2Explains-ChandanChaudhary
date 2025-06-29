@@ -90,7 +90,7 @@ function Collection() {
     }, [sortType]);
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-12 md:px-0 sm:ml-32 md:ml-56'>
+    <div className='flex flex-col md:flex-row gap-1 sm:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-12 md:px-8 ml-0 sm:ml-28 md:ml-36 lg:ml-52'>
 
       {/* Filter option */}
       <div className='min-w-40'>
@@ -168,9 +168,9 @@ function Collection() {
       </div>
       
       {/* Products */}
-      <div className='flex-1 pr-8'>
+      <div className='flex flex-col justify-center'>
 
-        <div className='flex justify-between text-base sm:text-2xl mb-4'>
+        <div className='flex justify-between text-base sm:text-2xl mb-4 '>
           <Title text1={"All"} text2={"COLLECTIONS"} />
           
           {/* Product sort */}
@@ -183,7 +183,7 @@ function Collection() {
         </div>
 
         {/* All Products */}
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 my-12'>
+        <div className='flex flex-wrap justify-between gap-10 gap-y-6 my-12 px-10'>
 
           {
             filterProducts.map((item, index) => (

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function SidebarMenu() {
   return (
-      <div className='h-[90vh] gap-2 md:gap-6 hidden sm:flex justify-start flex-col text-sm md:text-base text-white fixed w-max pr-2 md:pr-5 lg:pr-8 py-4 bottom-0 border-r border-r-[#b6bee5]/50'>
+      <div className='h-[90vh]  hidden sm:flex justify-between flex-col text-sm md:text-base text-white fixed w-max pr-7 md:pr-8 lg:pr-10 py-4 bottom-0 border-r border-r-[#b6bee5]/50'>
         <NavLink to="/" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
           <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
           <p className=''>Home</p>
@@ -33,7 +33,7 @@ function SidebarMenu() {
 
         <NavLink to="/stack-images" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
             <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>Stack images <span className='bg-gray-700 rounded-full text-[8px] md:text-[10px] px-2 py-1'>new</span></p>
+            <p className='relative'>Stack images <span className='bg-[#6225e6] hover:bg-[#fbc638] text-[#fff] font-semibold rotate-12 hover:text-[#000] rounded-full text-[8px] md:text-[10px] px-2 py-0 absolute -right-5 -top-4 transition-all ease-in-out duration-500'>new</span></p>
         </NavLink>
 
         <NavLink to="/about" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>

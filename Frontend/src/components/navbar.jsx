@@ -94,7 +94,7 @@ function Navbar() {
         <button className='rounded-full py-1 md:py-1.5 px-2 md:px-3 border border-[#fff]/50 text-xs md:text-sm'>Admin Panel</button>
       </div> */}
 
-      <div className='flex gap-5 sm:gap-8 items-center justify-center'>
+      <div className='flex gap-3 sm:gap-8 items-center justify-center'>
         <SearchBar />
         <button onClick={manageSearch} className={`${turnBtn} group relative p-1.5 sm:p-2 rounded-full hover:bg-[#181e33] cursor-pointer hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95`}>
           <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3]`} viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
@@ -185,7 +185,7 @@ function Navbar() {
         <svg 
           onClick={() => setVisible(true)} 
           xmlns="http://www.w3.org/2000/svg" 
-          className='w-8 h-8 block sm:hidden cursor-pointer' 
+          className='w-5 sm:w-7 h-5 sm:h-7 block sm:hidden cursor-pointer' 
           viewBox="0 -960 960 960" 
           fill="#e3e3e3">
           <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>

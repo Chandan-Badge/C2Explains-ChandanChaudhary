@@ -14,6 +14,10 @@ a.active .menu {
     background: linear-gradient(120deg, rgb(38, 255, 227, 0.2) 50%, transparent 80%);
 }
 
+:hover.sidebar-menu {
+    background: linear-gradient(120deg, rgb(38, 255, 227, 0.2) 50%, transparent 80%);
+}
+
 .sidebar-menu-mobile.active {
     background-color: #00008b;
     color: white;

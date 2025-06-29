@@ -26,9 +26,9 @@ function Cart() {
   }, [cartData]);
 
   return (
-    <div className='mt-32 md:mt-36 ml-0 sm:ml-36 md:ml-56 px-8'>
+    <div className='mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
       
-      <div className='text-2xl mb-4'>
+      <div className='text-2xl mb-4 border-b-2 border-[#b6bee5]/50'>
         <Title text1={"Your"} text2={"Cart"}/>
       </div>
 
@@ -38,7 +38,7 @@ function Cart() {
             const productData = products.find((product) => product._id === item._id);
 
             return (
-              <div key={index} className='py-4 border-t border-b text-gray-300 items-center gap-4 flex justify-between px-4'> 
+              <div key={index} className='py-4 border-b border-[#b6bee5]/50 text-gray-300 items-center gap-4 flex justify-between px-4'> 
                 <div className='flex gap-6 items-start '>
                   <img src={productData.image} alt="" className='w-20' />
 
