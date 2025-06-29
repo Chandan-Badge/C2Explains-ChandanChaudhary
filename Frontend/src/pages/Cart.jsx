@@ -52,13 +52,19 @@ function Cart() {
                 </div>
 
                 <div className='flex gap-5 items-center'>
-                  <input 
-                    onChange={(e) => e.target.value === "" || e.target.value === 0 ? null : updateQuantity(item._id, Number(e.target.value))}
-                    type="number" 
-                    min={1} 
-                    defaultValue={item.quantity} 
-                    className='border-10 max-w-12 pl-2 px-1 py-1 bg-slate-700 appearance-none border-none' 
-                  />
+                  <div className='relative flex items-center justify-center'>
+                    <input 
+                      onChange={(e) => e.target.value === "" || e.target.value === 0 ? null : updateQuantity(item._id, Number(e.target.value))}
+                      type="number" 
+                      min={1} 
+                      defaultValue={item.quantity} 
+                      className='border-10 max-w-12 pl-2 px-1 py-1 bg-slate-700 rounded border border-[#b6bee5]/50' />
+
+                    <div className='flex flex-col gap-0 justify-around items-center absolute top-0 right-0.5 pointer-events-none bg-none'>
+                      <svg xmlns="http://www.w3.org/2000/svg" className='w-5 relative bottom-0' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m280-400 200-200 200 200H280Z"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className='w-5 relative -top-1.5' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                    </div>
+                  </div>
 
                   <svg 
                     onClick={() => updateQuantity(item._id, 0)} 
