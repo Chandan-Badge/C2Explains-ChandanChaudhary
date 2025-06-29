@@ -31,6 +31,10 @@ const ShopContextProvider = (probs) => {
         setCartItems(cartData);
     }
 
+    useEffect(() => {
+    // console.log(cartItems); 
+    }, [cartItems]);
+
     const getCartCount = () => {
         let totalCount = 0;
         for(const item in cartItems) {
@@ -45,17 +49,19 @@ const ShopContextProvider = (probs) => {
         return totalCount;
     }
 
+    const updateQuantity = async (itemId, quantity) => {
+        let cartData = structuredClone(cartItems);
 
-    useEffect(() => {
-        // console.log(cartItems); 
-    }, [cartItems]);
+        cartData[itemId] = quantity;
+        setCartItems(cartData);
+    }
 
     const value = {
         products, currency,
         search, setSearch, showSearch, setShowSearch,
         searchBtn, setSearchBtn,
         cartItems, addToCart,
-        getCartCount
+        getCartCount, updateQuantity
     }
 
     return (

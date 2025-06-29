@@ -5,7 +5,7 @@ import { products } from '../assets/assets.js';
 
 function Cart() {
 
-  const {product, currency, cartItems} = useContext(ShopContext);
+  const {product, currency, cartItems, updateQuantity} = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
   
@@ -23,7 +23,7 @@ function Cart() {
 
     // console.log(tempData);
     setCartData(tempData);
-  }, [cartData]);
+  }, [cartItems]);
 
   return (
     <div className='mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
@@ -52,8 +52,21 @@ function Cart() {
                 </div>
 
                 <div className='flex gap-5 items-center'>
-                  <input type="number" min={1} defaultValue={item.quantity} className='border-10 max-w-12 px-1.5 sm:px-3 py-1 bg-slate-700' />
-                  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3] cursor-pointer`} viewBox="0 -960 960 960" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                  <input 
+                    onChange={(e) => e.target.value === "" || e.target.value === 0 ? null : updateQuantity(item._id, Number(e.target.value))}
+                    type="number" 
+                    min={1} 
+                    defaultValue={item.quantity} 
+                    className='border-10 max-w-12 pl-2 px-1 py-1 bg-slate-700 appearance-none border-none' 
+                  />
+
+                  <svg 
+                    onClick={() => updateQuantity(item._id, 0)} 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className={`w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3] cursor-pointer`} 
+                    viewBox="0 -960 960 960" fill="#e3e3e3">
+                    <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                  </svg>
                 </div>
               </div>
             )

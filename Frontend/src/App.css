@@ -44,3 +44,17 @@ a.active .menu {
   display: hidden !important;
   visibility: hidden !important;
 }
+
+input[type="number"] {
+  background-color: #2d2f3a; /* example gray background */
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+/* Hide default spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
