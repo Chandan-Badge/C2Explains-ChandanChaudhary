@@ -66,7 +66,7 @@ function Navbar() {
     // let profile = profileBtn ? "block" : "hidden";
 
   return (
-    <div className='px-6 md:px-10 py-5 h-[10vh] bg-[#0d1224] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50 fixed top-0 w-full z-10'>
+    <div className='px-4 sm:px-6 md:px-10 py-5 h-[10vh] bg-[#0d1224] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50 fixed top-0 w-full z-10'>
       
       <Link to="/"><img src={assets.logo} alt="" className='w-32 md:w-44' /></Link>
 
@@ -94,7 +94,7 @@ function Navbar() {
         <button className='rounded-full py-1 md:py-1.5 px-2 md:px-3 border border-[#fff]/50 text-xs md:text-sm'>Admin Panel</button>
       </div> */}
 
-      <div className='flex gap-3 sm:gap-8 items-center justify-center'>
+      <div className='flex gap-2 sm:gap-4 md:gap-8 items-center justify-center'>
         <SearchBar />
         <button onClick={manageSearch} className={`${turnBtn} group relative p-1.5 sm:p-2 rounded-full hover:bg-[#181e33] cursor-pointer hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95`}>
           <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3]`} viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
@@ -147,7 +147,10 @@ function Navbar() {
           <div className='relative'>
             <svg xmlns="http://www.w3.org/2000/svg" className='w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3]' viewBox="0 -960 960 960"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
             {/* <svg xmlns="http://www.w3.org/2000/svg" className='w-5 sm:w-7 h-5 sm:h-7 fill-[#e3e3e3]' viewBox="0 -960 960 960"><path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/></svg> */}
-            <p className='absolute -right-[2px] -bottom-[2px] w-4 text-center landing-4 text-black bg-white aspect-square rounded-full text-[10px] flex justify-center items-center'>{getCartCount()}</p>
+
+            <div className='absolute -right-[2px] -bottom-[2px] bg-white rounded-full flex justify-center items-center w-3 sm:w-4 h-3 sm:h-4'>
+              <p className='text-center landing-4 text-black text-[8px] sm:text-[10px]'>{getCartCount()}</p>
+            </div>
           </div>
 
           <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 mb-2 left-1/2 transform -translate-x-1/2 z-50 -bottom-10 md:-bottom-12">
@@ -182,14 +185,16 @@ function Navbar() {
 
         </button>
 
-        <svg 
-          onClick={() => setVisible(true)} 
-          xmlns="http://www.w3.org/2000/svg" 
-          className='w-5 sm:w-7 h-5 sm:h-7 block sm:hidden cursor-pointer' 
-          viewBox="0 -960 960 960" 
-          fill="#e3e3e3">
-          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-        </svg>
+        <div className='block sm:hidden p-1.5 sm:p-2 rounded-full hover:bg-[#181e33] cursor-pointer transition-all duration-300 hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95'>
+          <svg 
+            onClick={() => setVisible(true)} 
+            xmlns="http://www.w3.org/2000/svg" 
+            className='w-5 sm:w-7 h-5 sm:h-7' 
+            viewBox="0 -960 960 960" 
+            fill="#e3e3e3">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+          </svg>
+        </div>
 
       </div>
 
