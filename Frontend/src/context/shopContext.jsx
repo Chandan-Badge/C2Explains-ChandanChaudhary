@@ -56,7 +56,7 @@ const ShopContextProvider = (probs) => {
         setCartItems(cartData);
     }
 
-    const getCartAmount = async () => {
+    const getCartAmount = () => {
         let totalAmount = 0;
 
         for(const items in cartItems) {
