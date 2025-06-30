@@ -38,7 +38,7 @@ function Product() {
   }
 
   return productData ? (
-    <div className='mt-28 w-full flex justify-end px-24 text-[#fff]'>
+    <div className='mt-28 w-full flex justify-end px-24 text-[#fff] min-h-[80vh]'>
       <div className='w-[85%] flex flex-col justify-center items-center'>
 
         <div className='w-full flex justify-between'>

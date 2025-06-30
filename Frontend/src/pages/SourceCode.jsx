@@ -2,7 +2,7 @@ import React from 'react';
 
 function SourceCode() {
   return (
-    <div>
+    <div className='min-h-[80vh]'>
       
     </div>
   )
