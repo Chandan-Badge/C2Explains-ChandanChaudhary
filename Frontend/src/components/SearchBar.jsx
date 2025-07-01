@@ -12,7 +12,7 @@ function SearchBar() {
 
   return showSearch ? (
     <div className='text-center flex justify-center items-center transition-all ease-in-out duration-200'>
-      <div className='inline-flex items-center justify-center px-3 md:px-5 py-2 my-5 mx-3 rounded-full outline-[1px] outline-dashed outline-[#cccce5] focus-within:outline-[1px] focus-within:outline-[#26ffe3] focus-within:outline-double'>
+      <div className='inline-flex items-center justify-center px-3 md:px-5 py-2 my-2 mx-3 rounded-full outline-[1px] outline-dashed outline-[#cccce5] focus-within:outline-[1px] focus-within:outline-[#26ffe3] focus-within:outline-double'>
         <input 
         value={search}
         onChange={(e) => setSearch(e.target.value)}

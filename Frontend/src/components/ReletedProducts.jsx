@@ -20,10 +20,10 @@ function ReletedProducts({category, subCategory}) {
     }, [])
 
   return (
-    <div className='flex flex-col bg-[#181e33]/50 border border-[#b6bee5]/50 rounded-lg mt-12 w-[100%] px-12 py-8 justify-center items-center'>
+    <div className='flex flex-col bg-[#181e33]/50 border border-[#b6bee5]/50 rounded-lg mt-12 w-[100%] px-10 py-8 justify-center items-center'>
         <Title text1={"Related"} text2={"Product"} />
 
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 gap-y-6 mb-4'>
+        <div className='flex flex-wrap justify-evenly gap-14 gap-y-6 px-5 mb-4'>
             {
                 related.map((item, index) => (
                     <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
