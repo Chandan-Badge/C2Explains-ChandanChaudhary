@@ -15,7 +15,7 @@ function Hero() {
       <h2 className='text-4xl lg:text-5xl font-bold text-center max-w-[80%]'>Ultimate Destination for Software Developer's</h2>
       <p className='text-gray-400 text-base text-center max-w-[60vw] sm:max-w-[50vw]'>Accelerate your web development workflow, whether you're building sleek dashboards, dynamic landing pages, or scalable web applications, our components are built with accessibility, and modern design standards in mind.</p>
 
-      <div className='flex justify-center items-center gap-4 md:gap-8 lg:gap-20 mt-6 lg:mt-10 text-sm sm:text-base'>
+      <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 lg:gap-20 mt-6 lg:mt-10 text-sm sm:text-base'>
         <button className='border border-[#b6bee5]/50 hover:border-[#26ffe3] text-[#b6bee5] hover:text-gray-200 bg-[#181e33] py-2 px-6 md:px-8 lg:px-16 rounded-full flex items-center gap-1 md:gap-3 group transition-all ease-in-out duration-200'>
           Browse Components
           <svg xmlns="http://www.w3.org/2000/svg" className='w-3 fill-[#b6bee5] group-hover:fill-gray-200 pt-[2px]' viewBox="0 -960 960 960" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
