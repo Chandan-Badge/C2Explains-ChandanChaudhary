@@ -23,6 +23,11 @@ a.active .menu {
     color: white;
 }
 
+.all-collection .title {
+  /* background-color: deeppink; */
+  /* font-size: 6px !important; */
+}
+
 .show {
   /* display: flex; */
   visibility: visible;
@@ -45,6 +50,7 @@ a.active .menu {
   visibility: hidden !important;
 }
 
+/* Cart input box edit */
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button 
 {
    -webkit-appearance: none;

@@ -90,7 +90,7 @@ function Collection() {
     }, [sortType]);
 
   return (
-    <div className='flex flex-col md:flex-row gap-1 sm:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-12 md:px-8 ml-0 sm:ml-28 md:ml-36 lg:ml-52 mr-10 min-h-[80vh]'>
+    <div className='flex flex-col md:flex-row gap-1 sm:gap-5 lg:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-8 md:px-8 ml-0 sm:ml-28 md:ml-36 lg:ml-52 mr-0 sm:mr-10 min-h-[80vh]'>
 
       {/* Filter option */}
       <div className='min-w-36 lg:min-w-40'>
@@ -168,13 +168,13 @@ function Collection() {
       </div>
       
       {/* Products */}
-      <div className='flex flex-col justify-start'>
+      <div className='flex flex-col items-start justify-start lg:justify-between'>
 
-        <div className='min-w-[50vw] flex justify-between items-center text-base sm:text-2xl mb-4'>
+        <div className='all-collection min-w-[50vw] w-full flex flex-col lg:flex-row items-start lg:items-center justify-between text-base lg:text-2xl mb-4 px-0 sm:px-4'>
           <Title text1={"All"} text2={"COLLECTIONS"} />
           
           {/* Product sort */}
-          <select onChange={(e) => setSortType(e.target.value)} className='border-2 h-10 border-gray-500 text-gray-200 text-sm px-2 bg-[#0d1224]'>
+          <select onChange={(e) => setSortType(e.target.value)} className='border-2 h-8 lg:h-10 w-36 lg:w-max border-gray-500 text-gray-200 text-xs lg:text-sm px-1 lg:px-2 bg-[#0d1224]'>
             <option className="" value="relavent">Sort by: Relavent</option>
             <option className="" value="low-high">Sort by: Low to High</option>
             <option className="" value="high-low">Sort by: High to Low</option>
@@ -183,7 +183,7 @@ function Collection() {
         </div>
 
         {/* All Products */}
-        <div className='flex flex-wrap justify-between gap-10 gap-y-6 my-12 px-10'>
+        <div className='flex flex-wrap justify-around gap-10 gap-y-6 my-12 px-4 md:px-10'>
 
           {
             filterProducts.map((item, index) => (
