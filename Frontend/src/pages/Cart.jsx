@@ -39,8 +39,8 @@ function Cart() {
             const productData = products.find((product) => product._id === item._id);
 
             return (
-              <div key={index} className='py-4 border-b border-[#b6bee5]/50 text-gray-300 items-center gap-4 flex justify-between px-4'> 
-                <div className='flex gap-6 items-center '>
+              <div key={index} className='py-4 border-b border-[#b6bee5]/50 text-gray-300 items-center gap-4 flex justify-between px-3 sm:px-4'> 
+                <div className='flex gap-3 sm:gap-6 items-center '>
                   <img src={productData.image} alt="" className='w-20' />
 
                   <div>
@@ -52,7 +52,7 @@ function Cart() {
 
                 </div>
 
-                <div className='flex gap-5 items-center'>
+                <div className='flex gap-3 sm:gap-5 items-center'>
                   <div className='relative flex items-center justify-center'>
                     <input 
                       onChange={(e) => e.target.value === "" || e.target.value === 0 ? null : updateQuantity(item._id, Number(e.target.value))}
@@ -72,7 +72,7 @@ function Cart() {
                     <svg 
                       onClick={() => updateQuantity(item._id, 0)} 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className={`w-5 sm:w-7 h-5 sm:h-7 fill-[#a52a2a] hover:fill-[#f00] cursor-pointer transition-all duration-300`} 
+                      className={`w-6 sm:w-7 h-6 sm:h-7 fill-[#a52a2a] hover:fill-[#f00] cursor-pointer transition-all duration-300`} 
                       viewBox="0 -960 960 960" 
                       fill="#e3e3e3">
                       <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
