@@ -90,17 +90,17 @@ function Collection() {
     }, [sortType]);
 
   return (
-    <div className='flex flex-col md:flex-row gap-1 sm:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-12 md:px-8 ml-0 sm:ml-28 md:ml-36 lg:ml-52 min-h-[80vh]'>
+    <div className='flex flex-col md:flex-row gap-1 sm:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-12 md:px-8 ml-0 sm:ml-28 md:ml-36 lg:ml-52 mr-10 min-h-[80vh]'>
 
       {/* Filter option */}
-      <div className='min-w-40'>
+      <div className='min-w-36 lg:min-w-40'>
         <p className='my-2 text-xl flex items-center cursor-pointer gap-2 font-bold'>FILTER</p>
 
         {/* Category Filter */}
-        <div className={`border border-gray-400 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} md:block`}>
+        <div className={`border border-gray-400 pl-3 lg:pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} md:block`}>
           <p className='mb-3 text-start font-medium'>CATEGORIES</p>
 
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-300'>
+          <div className='flex flex-col gap-3 lg:gap-2 text-xs lg:text-sm font-light text-gray-300'>
             {/* <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={"All"} onChange={toggleCategory} /> All
             </p> */}
@@ -150,10 +150,10 @@ function Collection() {
         </div>
 
         {/* Sub-Category Filter */}
-        <div className={`border border-gray-400 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} md:block`}>
+        <div className={`border border-gray-400 pl-3 lg:pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} md:block`}>
           <p className='mb-3 text-start font-medium'>TYPE</p>
 
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-300'>
+          <div className='flex flex-col gap-3 lg:gap-2 text-xs lg:text-sm font-light text-gray-300'>
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={"Paid"} onChange={toggleType} /> Paid
             </p>
@@ -170,7 +170,7 @@ function Collection() {
       {/* Products */}
       <div className='flex flex-col justify-start'>
 
-        <div className='min-w-[65vw] flex justify-between items-center text-base sm:text-2xl mb-4'>
+        <div className='min-w-[50vw] flex justify-between items-center text-base sm:text-2xl mb-4'>
           <Title text1={"All"} text2={"COLLECTIONS"} />
           
           {/* Product sort */}

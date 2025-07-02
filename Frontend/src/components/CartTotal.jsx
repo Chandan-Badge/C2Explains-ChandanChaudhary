@@ -16,19 +16,19 @@ function CartTotal() {
       <div className='flex flex-col gap-2 mt-2 text-sm'>
         <div className='flex justify-between'>
           <p>Subtotal:</p>
-          <p>{currency} {getCartAmount()}</p>
+          <p>{currency} {parseFloat(getCartAmount().toFixed(3))}</p>
         </div>
         <hr />
 
         <div className='flex justify-between'>
           <p>GST(6%):</p>
-          <p>{(getCartAmount() * 0.06)}</p>
+          <p>{currency} {parseFloat((getCartAmount() * 0.06).toFixed(3))}</p>
         </div>
         <hr />
 
         <div className='flex justify-between'>
           <p>Total:</p>
-          <p>{currency} {getCartAmount() + (getCartAmount() * 0.06)}</p>
+          <p>{currency} {parseFloat((getCartAmount() === 0 ? 0 : getCartAmount() + (getCartAmount() * 0.06)).toFixed(3))}</p>
         </div>
         <hr />        
       </div>
