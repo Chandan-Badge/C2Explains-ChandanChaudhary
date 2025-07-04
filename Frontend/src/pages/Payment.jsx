@@ -16,11 +16,11 @@ function Payment() {
         </div>
 
         <div className='flex gap-3'>
-          <input type="text" className='border border-gray-300 bg-gray-800 rounded py-1.5 px-3.5 w-full' placeholder='First name' />
-          <input type="text" className='border border-gray-300 bg-gray-800 rounded py-1.5 px-3.5 w-full' placeholder='Last name' />
+          <input type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='First name' />
+          <input type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='Last name' />
         </div>
         
-        <input type="email" className='border border-gray-300 bg-gray-800 rounded py-1.5 px-3.5 w-full' placeholder='enter email' />
+        <input type="email" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='enter email' />
 
         <div className='mt-4 min-w-80 text-white'>
           <CartTotal />
