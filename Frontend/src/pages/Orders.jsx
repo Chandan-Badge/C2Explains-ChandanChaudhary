@@ -9,7 +9,7 @@ function Orders() {
   return (
     <div className='min-h-[80vh] mt-24 md:mt-24 ml-0 sm:ml-40 md:ml-48 px-6 sm:px-8'>
       
-      <div className='text-2xl'>
+      <div className='text-2xl sm:text-3xl'>
         <Title text1={"MY"} text2={"ORDERS"} />
       </div>
 
@@ -21,8 +21,8 @@ function Orders() {
                 <img src={item.image[0]} className='w-16 sm:w-20' alt="" />
                 <div>
                   <p className='text-base sm:text-lg font-medium'>{item.name}</p>
-                  <div className='flex items-center gap-3 mt-2 text-base text-gray-300'>
-                    <p className='text-base'>{currency}{item.price}</p>
+                  <div className='flex items-center gap-3 mt-2 text-sm text-gray-300'>
+                    <p className=''>{currency}{item.price}</p>
                     <p>Quantity: 1</p>
                   </div>
 

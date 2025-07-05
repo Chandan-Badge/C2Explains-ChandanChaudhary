@@ -62,7 +62,7 @@ function Product() {
 
           {/* Product Info */}
           <div className='h-[80%] w-[100%] md:w-[50%] flex flex-col gap-3 pr-0 md:pr-5'>
-            <h1 className='text-2xl sm:text-4xl md:text-5xl font-bold text-center'>{productData.name}</h1>
+            <h1 className='text-2xl sm:text-3xl lg:text-4xl font-bold'>{productData.name}</h1>
             <p className='text-xs md:text-sm lg:text-base font-normal text-[#b6bee5]'>{productData.description}</p>
             <h2 className='text-xl md:text-2xl font-medium flex'>Price: ₹{productData.price} {(productData.price == 0) && <span className='text-[#b6bee5] text-xl ml-1'>(Free)</span>}</h2>
 
@@ -88,7 +88,7 @@ function Product() {
 
       </div>
     </div>
-  ) : <div className='opacity-0'></div>
+  ) : <div className='opacity min-h-[80vh]'></div>
 }
 
 export default Product;

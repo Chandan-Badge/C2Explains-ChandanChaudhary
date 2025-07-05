@@ -170,7 +170,7 @@ function Collection() {
       {/* Products */}
       <div className='flex flex-col items-start justify-start lg:justify-between'>
 
-        <div className='all-collection min-w-[50vw] w-full flex flex-col lg:flex-row items-start lg:items-center justify-between text-base lg:text-2xl mb-4 px-0 sm:px-4'>
+        <div className='all-collection min-w-[50vw] w-full flex flex-col lg:flex-row items-start lg:items-center justify-between text-2xl sm:text-4xl mb-4 px-0 sm:px-4'>
           <Title text1={"All"} text2={"COLLECTIONS"} />
           
           {/* Product sort */}

@@ -29,7 +29,7 @@ function Cart() {
   return (
     <div className='mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8 min-h-[65vh]'>
       
-      <div className='text-2xl mb-4 border-b-2 border-[#b6bee5]/50'>
+      <div className='text-2xl sm:text-4xl mb-4 border-b-2 border-[#b6bee5]/50'>
         <Title text1={"Your"} text2={"Cart"}/>
       </div>
 
@@ -86,7 +86,7 @@ function Cart() {
       </div>
 
         <div className='flex justify-end my-20 text-[#fff]'>
-          <div className='w-full sm:w-[450px]'>
+          <div className='w-full sm:w-[450px] text-2xl'>
             <CartTotal />
 
             <div className='w-full text-center'>
