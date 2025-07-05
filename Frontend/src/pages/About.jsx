@@ -1,18 +1,20 @@
 import React from 'react';
 import Title from '../components/Title';
 import Coder from "../assets/coder.png";
+import NewsletterBox from '../components/NewsletterBox';
 
 function About() {
   return (
-    <div className='min-h-[80vh] mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
+    <div className='min-h-[80vh] mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-6 sm:px-8'>
       
-      <div className='text-2xl'>
+      <div className='text-2xl sm:text-3xl'>
         <Title text1={"ABOUT"} text2={"US"} />
       </div>
 
-      <div className='my-10 flex flex-col md:flex-row gap-14'>
-        <img src={Coder} className='w-full md:max-w-[450px]' alt="" />
-        <div className='flex flex-col justify-start gap-6 md:w-2/4 text-gray-200'>
+      <div className='my-10 flex flex-col lg:flex-row gap-14 justify-center items-center'>
+        <img src={Coder} className='w-[60%] lg:max-w-[30vw] h-max' alt="" />
+
+        <div className='flex flex-col justify-start gap-6 lg:w-2/4 text-gray-200'>
           <p className="mt-1 md:mt-2 text-[#fff] text-sm lg:text-base">I'm Chandan Chaudhary, a 18-year-old Indian <span className="text-[#b6bee5]">Freelance</span> & <span className="text-[#b6bee5]">MERN Stack developer</span>. I'm a weird guy who likes innovative things with web technologies.
             <br />I like to <span className="text-[#b6bee5]">resolve</span> frontend & backend problems, <span className="text-[#b6bee5]">create</span> smart user interface and <span className="text-[#b6bee5]">imagine</span> useful interaction, developing rich <span className="text-[#b6bee5]">web experiences</span> & <span className="text-[#b6bee5]">web applications</span>.
             When my code is not working or futzing around the code, I study how to <span className="text-[#b6bee5]">resolve</span> it.</p>
@@ -125,7 +127,38 @@ function About() {
               </li>
 
           </ul>
+
+          {/* <div>
+            <h2 className='font-bold text-[#b6bee5]'>Our Mission</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, doloribus. Lorem ipsum dolor sit amet.</p>
+          </div> */}
+          
         </div>
+      </div>
+
+      <div className='text-xl py-4 mt-20'>
+        <Title text1={"WHY"} text2={"CHOOSE US"} />
+      </div>
+
+      <div className='flex flex-col md:flex-row text-sm mb-16 text-white'>
+          <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
+            <h3 className='font-bold'>Quality Assurance:</h3>
+            <p className='text-gray-300'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, quam!</p>
+          </div>
+
+          <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
+            <h3 className='font-bold'>Convenience:</h3>
+            <p className='text-gray-300'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, quam!</p>
+          </div>
+
+          <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
+            <h3 className='font-bold'>Exceptional Customer Service:</h3>
+            <p className='text-gray-300'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, quam!</p>
+          </div>
+      </div>
+
+      <div className='flex justify-center w-full'>
+        <NewsletterBox />
       </div>
 
     </div>
