@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 function Login() {
 
   const [currentState, setCurrentState] = useState("Sign up");
 
   const onSubmitHandler = async (event) => {
+    
+    toast.success("Login successful")
+
     event.preventDefault();
   }
   

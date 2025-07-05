@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { products } from "../assets/assets.js";
 import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 export const ShopContext = createContext();
 
@@ -15,6 +16,9 @@ const ShopContextProvider = (probs) => {
     const navigate = useNavigate();
 
     const addToCart = async (itemId) => {
+        
+        toast.success("Added in the cart.");
+
         let cartData = structuredClone(cartItems);
 
         if(cartData[itemId]) {
@@ -24,7 +28,9 @@ const ShopContextProvider = (probs) => {
             // else {
             //     cartData[itemId] = 1;
             // }
+            // toast.success("Added in the cart.");
             cartData[itemId] += 1;
+
         } else {
             cartData[itemId] = {};
             cartData[itemId] = 1;

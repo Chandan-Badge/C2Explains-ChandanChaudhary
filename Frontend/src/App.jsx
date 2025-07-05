@@ -28,6 +28,7 @@ function App() {
   return (
     <div className='font-[poppins]'>
 
+        <ToastContainer />
         <Navbar />
         {/* <SearchBar /> */}
         <SidebarMenu />
