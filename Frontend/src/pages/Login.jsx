@@ -30,7 +30,7 @@ function Login() {
           }
         </div>
 
-        <button className='w-full bg-white hover:bg-gray-200 text-black px-16 py-3 text-base'>{currentState}</button>
+        <button className='w-full font-medium bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 px-16 py-3 text-base mt-2 transition-all duration-200 ease-in-out'>{currentState}</button>
       </form>
     </div>
   )
