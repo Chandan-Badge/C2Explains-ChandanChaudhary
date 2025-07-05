@@ -27,7 +27,7 @@ function Payment() {
         </div>
 
         <div className='w-full mt-4 text-center'>
-          <button onClick={() => navigate("/orders")} className='bg-white text-black px-16 py-3 text-sm'>Complete Purchase</button>
+          <button onClick={() => navigate("/orders")} className='font-medium text-sm bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 px-16 py-3 transition-all duration-200 ease-in-out'>Complete Purchase</button>
         </div>
       </div>
       

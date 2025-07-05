@@ -40,7 +40,7 @@ function Contact() {
             </div>
 
             {/* <!-- Button --> */}
-            <button type="submit" className="w-full bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 focus:ring-2 focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 me-2 mb-2">Send Massage</button>
+            <button type="submit" className="w-full font-medium text-sm bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 rounded focus:ring-2 focus:ring-blue-300 px-5 py-2.5 me-2 mb-2 transition-all duration-200 ease-in-out">Send Massage</button>
           </form>
 
         </div>
