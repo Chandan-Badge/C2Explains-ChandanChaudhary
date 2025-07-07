@@ -11,16 +11,16 @@ let port = process.env.PORT || 8080;
 main();
 connectCloudinary();
 
-// app.use(express.json());
-// app.use(cors());
+app.use(express.json());
+app.use(cors());
 
 // API endpoints
 app.use("/api/user", userRoute);
 
-app.listen(port, () => {
-    console.log(`App was listen on port ${port}`);
-})
-
 app.get("/", (req, res) => {
     res.send("Server Started.");
+})
+
+app.listen(port, () => {
+    console.log(`App was listen on port ${port}`);
 })

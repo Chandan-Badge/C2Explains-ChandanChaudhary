@@ -2,23 +2,23 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     name: {
-        typr: String,
+        type: String,
         required: true
     },
 
     email: {
-        typr: String,
+        type: String,
         required: true,
         unique: true
     },
 
     password: {
-        typr: String,
+        type: String,
         required: true
     },
 
     cartItem: {
-        typr: Object,
+        type: Object,
         default: {}
     },
 }, {minimize: false})
