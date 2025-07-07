@@ -1,13 +1,5 @@
 import mongoose from "mongoose";
 
-async function main() {
-    await mongoose.connect(`${process.env.MONGODB_URI}/c2explains`)
-}
-
-main()
-    .then(() => console.log("Model Created"))
-    .catch((err) => console.log("ERROR - ", err));
-
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
