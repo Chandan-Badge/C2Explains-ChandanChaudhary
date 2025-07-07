@@ -3,15 +3,19 @@ import cors from "cors";
 import "dotenv/config";
 import main from "./config/mongoDB.js";
 import connectCloudinary from "./config/cloudinary.js";
-
-// app.use(express.json());
-// app.use(cors());
+import userRoute from "./routes/user.route.js";
 
 // App config
 const app = express();
 let port = process.env.PORT || 8080;
 main();
 connectCloudinary();
+
+// app.use(express.json());
+// app.use(cors());
+
+// API endpoints
+app.use("/api/user", userRoute);
 
 app.listen(port, () => {
     console.log(`App was listen on port ${port}`);
