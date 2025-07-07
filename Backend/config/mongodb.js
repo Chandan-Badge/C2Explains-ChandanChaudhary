@@ -6,6 +6,6 @@ const main = async() => {
 
 main()
     .then(() => console.log("DB Connection Successful..."))
-    .catch((err) => console.log("ERROR -", err));
+    .catch((err) => console.log("MongoDB connection Error:-", err));
 
 export default main;
