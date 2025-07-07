@@ -10,7 +10,29 @@ const createTocken = (id) => {
 
 // route for Login user
 const loginUser = async(req, res) => {
-    
+    try {
+        const {email, password} = req.body;
+
+        const user = await User.findOne({email});
+
+        if(!user) {
+            return res.json({success: false, message: "User doesn't Exist."})
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if(isMatch) {
+            const token = createTocken(user._id);
+            res.json({success: true, token})
+        }
+        else {
+            res.json({success: false, message: "Invalid credentials."})
+        }
+
+    } catch (error) {
+        console.log("Login have error:", error);
+        res.json({success: false, message: error.message})
+    }
 }
 
 // route for register user
@@ -51,7 +73,7 @@ const registerUser = async(req, res) => {
         res.json({success: true, token})
 
     } catch (error) {
-        console.log("Contriller have error:", error);
+        console.log("Registration have error:", error);
         res.json({success: false, message: error.message})
     }
     
@@ -59,7 +81,7 @@ const registerUser = async(req, res) => {
 
 // route for admin login
 const adminLogin = async(req, res) => {
-
+    
 }
 
 export {loginUser, registerUser, adminLogin};
