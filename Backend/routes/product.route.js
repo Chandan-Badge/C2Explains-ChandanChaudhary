@@ -8,4 +8,4 @@ productRouter.post("/list", listProduct);
 productRouter.post("/remove", removeProduct);
 productRouter.post("/single", singleProduct);
 
-export default userRouter;
+export default productRouter;
