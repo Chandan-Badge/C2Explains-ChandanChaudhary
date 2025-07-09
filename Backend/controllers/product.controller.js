@@ -1,8 +1,12 @@
 
 
 // function for add product
-const addProduct = (req, res) => {
-
+const addProduct = async (req, res) => {
+    try {
+        
+    } catch (error) {
+        const {name, description, price, image, category, subCategory, type, date, bestseller} = req.body;
+    }
 }
 
 // function for list product
