@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 
 
-const createTocken = (id) => {
+const createToken = (id) => {
     return jwt.sign({id}, process.env.JWT_SECRET)
 }
 
@@ -22,7 +22,7 @@ const loginUser = async(req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
 
         if(isMatch) {
-            const token = createTocken(user._id);
+            const token = createToken(user._id);
             res.json({success: true, token})
         }
         else {
@@ -68,7 +68,7 @@ const registerUser = async(req, res) => {
 
         const user = await newUser.save();
 
-        const token = createTocken(user._id)
+        const token = createToken(user._id)
 
         res.json({success: true, token})
 
@@ -82,6 +82,23 @@ const registerUser = async(req, res) => {
 // route for admin login
 const adminLogin = async(req, res) => {
     
+    try {
+
+        const {email, password} = req.body;
+        
+        if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+            const token = jwt.sign(email+password, process.env.JWT_SECRET);
+
+            res.json({success: true, token})
+        } else {
+            res.json({success: false, message: "Enter correct details."})
+        }
+        
+    } catch (error) {
+        console.log("Admin panel have an error:", error);
+        res.json({success: false, message: error.message})
+    }
+
 }
 
 export {loginUser, registerUser, adminLogin};
