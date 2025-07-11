@@ -5,7 +5,7 @@ import User from "../models/user.model.js";
 
 
 const createToken = (id) => {
-    return jwt.sign({id}, process.env.JWT_SECRET)
+    return jwt.sign({id}, process.env.JWT_SECRET);
 }
 
 // route for Login user
@@ -23,7 +23,7 @@ const loginUser = async(req, res) => {
 
         if(isMatch) {
             const token = createToken(user._id);
-            res.json({success: true, token})
+            res.json({success: true, token});
         }
         else {
             res.json({success: false, message: "Invalid credentials."})
@@ -31,7 +31,7 @@ const loginUser = async(req, res) => {
 
     } catch (error) {
         console.log("Login have error:", error);
-        res.json({success: false, message: error.message})
+        res.json({success: false, message: error.message});
     }
 }
 
@@ -74,7 +74,7 @@ const registerUser = async(req, res) => {
 
     } catch (error) {
         console.log("Registration have error:", error);
-        res.json({success: false, message: error.message})
+        res.json({success: false, message: error.message});
     }
     
 }
@@ -96,7 +96,7 @@ const adminLogin = async(req, res) => {
         
     } catch (error) {
         console.log("Admin panel have an error:", error);
-        res.json({success: false, message: error.message})
+        res.json({success: false, message: error.message});
     }
 
 }
