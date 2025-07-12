@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      Admin Panel
+      <p className='bg-red-400'>Admin Panel</p>Admin Panel
     </>
   )
 }
