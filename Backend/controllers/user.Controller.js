@@ -26,7 +26,7 @@ const loginUser = async(req, res) => {
             res.json({success: true, token});
         }
         else {
-            res.json({success: false, message: "Invalid credentials."})
+            res.json({success: false, message: "Invalid credentials."});
         }
 
     } catch (error) {
@@ -45,15 +45,15 @@ const registerUser = async(req, res) => {
         const exists = await User.findOne({email});
 
         if(exists) {
-            return res.json({success: false, message: "User already Exist."})
+            return res.json({success: false, message: "User already Exist."});
         }
 
         if(!validator.isEmail(email)) {
-            return res.json({success: false, message: "Please enter valid email."})
+            return res.json({success: false, message: "Please enter valid email."});
         } 
 
         if(password.length < 8) {
-            return res.json({success: false, message: "Please enter strong password."})
+            return res.json({success: false, message: "Please enter strong password."});
         } 
 
         // hashing user password
@@ -68,7 +68,7 @@ const registerUser = async(req, res) => {
 
         const user = await newUser.save();
 
-        const token = createToken(user._id)
+        const token = createToken(user._id);
 
         res.json({success: true, token})
 
@@ -89,9 +89,9 @@ const adminLogin = async(req, res) => {
         if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
             const token = jwt.sign(email+password, process.env.JWT_SECRET);
 
-            res.json({success: true, token})
+            res.json({success: true, token});
         } else {
-            res.json({success: false, message: "Enter correct details."})
+            res.json({success: false, message: "Enter correct details."});
         }
         
     } catch (error) {
