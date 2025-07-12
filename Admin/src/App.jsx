@@ -1,11 +1,22 @@
 import { useState } from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Add from './Pages/Add';
+import List from './Pages/List';
+import Orders from './Pages/Orders';
 
 function App() {
 
   return (
     <>
-      <p className='bg-red-400'>Admin Panel</p>Admin Panel
+      <div>
+        <Routes>
+          <Route path='/' element={<Add />} />
+          {/* <Route path='/add' element={<Add />} /> */}
+          <Route path='/list' element={<List />} />
+          <Route path='/orders' element={<Orders />} />
+        </Routes>
+      </div>
     </>
   )
 }
