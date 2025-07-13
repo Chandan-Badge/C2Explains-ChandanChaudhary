@@ -4,18 +4,20 @@ import { Route, Routes } from 'react-router-dom';
 import Add from './Pages/Add';
 import List from './Pages/List';
 import Orders from './Pages/Orders';
+import Navbar from './Components/Navbar';
 
 function App() {
 
   return (
     <>
-      <div>
-        <Routes>
+      <div className='text-white'>
+        <Navbar />
+        {/* <Routes>
           <Route path='/' element={<Add />} />
-          {/* <Route path='/add' element={<Add />} /> */}
+          <Route path='/add' element={<Add />} />
           <Route path='/list' element={<List />} />
           <Route path='/orders' element={<Orders />} />
-        </Routes>
+        </Routes> */}
       </div>
     </>
   )
