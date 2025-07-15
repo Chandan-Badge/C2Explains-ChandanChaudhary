@@ -6,12 +6,18 @@ import List from './Pages/List';
 import Orders from './Pages/Orders';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
+import Login from './Components/Login';
 
 function App() {
 
+  const [token, setToken] = useState("");
+
   return (
     <div className='text-white min-h-screen'>
-      <>
+
+      {token === "" 
+      ? <Login /> 
+      : <>
         <Navbar />
 
         <div className='flex w-full'>
@@ -28,6 +34,8 @@ function App() {
         </div>
 
       </>
+      }
+
     </div>
   )
 }
