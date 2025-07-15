@@ -8,6 +8,8 @@ import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
 import Login from './Components/Login';
 
+export const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 function App() {
 
   const [token, setToken] = useState("");
