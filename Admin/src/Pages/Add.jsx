@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { assets } from '../assets/assets.js';
+import axios from "axios";
+import backendUrl from "../App.jsx";
 
 function Add() {
 
@@ -16,8 +18,36 @@ function Add() {
   const [type, setType] = useState("Free");
   const [bestSeller, setBestSeller] = useState(false);
 
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData();
+
+      formData.append("name", name);
+      formData.append("description", description);
+      formData.append("price", price);
+      formData.append("category", category);
+      formData.append("subCategory", subCategory);
+      formData.append("type", type);
+      formData.append("bestSeller", bestSeller);
+
+      image1 && formData.append("image1", image1);
+      image2 && formData.append("image2", image2);
+      image3 && formData.append("image3", image3);
+      image4 && formData.append("image4", image4);
+
+      const response = await axios.post(backendUrl + "/api/response/add", formData);
+      console.log(response.data);
+
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
   return (
-    <form className='flex flex-col w-full items-start gap-4'>
+    <form onSubmit={onSubmitHandler} className='flex flex-col w-full items-start gap-4'>
       <h1 className='text-4xl mb-2 font-bold text-[#c586a5]'>Add Product</h1>
       <div>
         <p className='font-medium mb-2'>Upload Image</p>
@@ -91,7 +121,7 @@ function Add() {
         </div>
 
         <div className=''>
-          <p className='mb-2'>Product name:</p>
+          <p className='mb-2'>Product price:</p>
           <input onChange={(e) => setPrice(e.target.value)} value={price} className='rounded px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="number" placeholder='enter amount' required />
         </div>
 
