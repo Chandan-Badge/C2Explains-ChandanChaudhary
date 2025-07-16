@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { assets } from '../assets/assets.js';
 import axios from "axios";
-import backendUrl from "../App.jsx";
+import { backendUrl } from "../App.jsx";
 
-function Add() {
+function Add({token}) {
 
   const [image1, setImage1] = useState(false);
   const [image2, setImage2] = useState(false);
@@ -37,7 +37,7 @@ function Add() {
       image3 && formData.append("image3", image3);
       image4 && formData.append("image4", image4);
 
-      const response = await axios.post(backendUrl + "/api/response/add", formData);
+      const response = await axios.post(backendUrl + "/api/product/add", formData,{headers: {token}});
       console.log(response.data);
 
     } catch (error) {
@@ -121,7 +121,7 @@ function Add() {
         </div>
 
         <div className=''>
-          <p className='mb-2'>Product price:</p>
+          <p className='mb-2'>Product Price:</p>
           <input onChange={(e) => setPrice(e.target.value)} value={price} className='rounded px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="number" placeholder='enter amount' required />
         </div>
 
