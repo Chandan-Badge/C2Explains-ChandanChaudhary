@@ -1,5 +1,5 @@
-import axios from"axios";
-import React, { useState } from 'react'
+import axios from "axios";
+import React, { useState } from 'react';
 import { backendUrl } from '../App';
 
 function Login() {
@@ -7,14 +7,15 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const submitHandler = async (e) => {
+  const onSubmitHandler = async (e) => {
     try {
       e.preventDefault();
 
-      const response = await axios.post(backendUrl + "api/user/admin",(email,password))
+      const response = await axios.post(backendUrl + "/api/user/admin",({ email,password }));
       console.log(response);
       
     } catch (error) {
+      console.log(error);
       
     }
   }
@@ -24,7 +25,7 @@ function Login() {
       <div className='border border-white/60 shadow-md rounded-md px-8 py-6 max-w-md'>
         <h1 className='text-2xl font-bold mb-4 text-[#b6bee5]'>Admin <span className='text-gray-200'>Panel</span></h1>
 
-        <form action="" onSubmit={submitHandler} className='flex flex-col gap-4'>
+        <form action="" onSubmit={onSubmitHandler} className='flex flex-col gap-4'>
           <div className='mb-3 min-w-72 flex flex-col gap-1'>
             <p className='text-sm font-medium text-gray-300'>Email Address: </p>
             <input onChange={(e) => setEmail(e.target.value)} value={email} className='rounded w-full px-3 py-2 bg-gray-900 border border-gray-500 outline-none' type="email" placeholder='Email' required />
