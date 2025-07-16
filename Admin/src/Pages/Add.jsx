@@ -3,8 +3,8 @@ import { assets } from '../assets/assets.js';
 
 function Add() {
   return (
-    <form className='flex flex-col w-full items-start gap-3'>
-      <h1 className='text-4xl mb-4 font-bold'>Add Product</h1>
+    <form className='flex flex-col w-full items-start gap-4'>
+      <h1 className='text-4xl mb-2 font-bold text-[#c586a5]'>Add Product</h1>
       <div>
         <p className='font-medium mb-2'>Upload Image</p>
 
@@ -31,11 +31,62 @@ function Add() {
         </div>
       </div>
 
-      <div>
-        <p>Product name:</p>
-        <input type="text" placeholder='type here' />
+      <div className='w-full'>
+        <p className='mb-2'>Product name:</p>
+        <input className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="text" placeholder='type here' required />
       </div>
 
+      <div className='w-full'>
+        <p className='mb-2'>Product description:</p>
+        <textarea className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500 focus-within:outline-[#c586a5]' rows={4} type="text" placeholder='write about content here' required ></textarea>
+      </div>
+
+      <div className='flex gap-3 sm:gap-10 w-full flex-col sm:flex-row'>
+        <div className=''>
+          <p className='mb-2'>Product category:</p>
+          <select name="" id="" className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
+            <option value="">Button</option>
+            <option value="">Card</option>
+            <option value="">Loader</option>
+            <option value="">Radio Button</option>
+            <option value="">Checkbox</option>
+            <option value="">Input</option>
+            <option value="">Switch</option>
+            <option value="">Form</option>
+            <option value="">Tooltip</option>
+            <option value="">Background</option>
+          </select>
+        </div>
+
+        <div className=''>
+          <p className='mb-2'>Sub category:</p>
+          <select name="" id="" className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
+            <option value="">Frontend</option>
+            <option value="">Backend</option>
+          </select>
+        </div>
+
+        <div className=''>
+          <p className='mb-2'>Product type:</p>
+          <select name="" id="" className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
+            <option value="">Free</option>
+            <option value="">Paid</option>
+          </select>
+        </div>
+
+        <div className=''>
+          <p className='mb-2'>Product name:</p>
+          <input className='rounded px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="number" placeholder='enter amount' required />
+        </div>
+
+      </div>
+
+      <div className='w-full flex gap-2 mt-2'>
+        <input className='' type="checkbox" id="bestseller" />
+        <label className='cursor-pointer' htmlFor="bestseller">Add to best seller</label>
+      </div>
+
+      <button type="submit" className='font-medium text-sm sm:text-base bg-gray-800 hover:bg-gray-900 border border-gray-700 py-3 px-20 mt-4 transition-all duration-300 ease-in-out'>ADD</button>
     </form>
   )
 }
