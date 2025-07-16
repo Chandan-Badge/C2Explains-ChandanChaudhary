@@ -48,18 +48,19 @@ function Add() {
 
       <div className='w-full'>
         <p className='mb-2'>Product name:</p>
-        <input className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="text" placeholder='type here' required />
+        <input onChange={(e) => setName(e.target.value)} value={name} className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="text" placeholder='type here' required />
       </div>
 
       <div className='w-full'>
         <p className='mb-2'>Product description:</p>
-        <textarea className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500 focus-within:outline-[#c586a5]' rows={4} type="text" placeholder='write about content here' required ></textarea>
+        <textarea onChange={(e) => setDescription(e.target.value)} value={description} className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500 focus-within:outline-[#c586a5]' rows={4} type="text" placeholder='write about content here' required ></textarea>
       </div>
 
       <div className='flex gap-3 sm:gap-10 w-full flex-col sm:flex-row'>
+
         <div className=''>
           <p className='mb-2'>Product category:</p>
-          <select name="" id="" className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
+          <select name="" id="" onChange={(e) => setCategory(e.target.value)} className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
             <option value="">Button</option>
             <option value="">Card</option>
             <option value="">Loader</option>
@@ -75,7 +76,7 @@ function Add() {
 
         <div className=''>
           <p className='mb-2'>Sub category:</p>
-          <select name="" id="" className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
+          <select name="" id="" onChange={(e) => setSubCategory(e.target.value)} className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
             <option value="">Frontend</option>
             <option value="">Backend</option>
           </select>
@@ -83,7 +84,7 @@ function Add() {
 
         <div className=''>
           <p className='mb-2'>Product type:</p>
-          <select name="" id="" className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
+          <select name="" id="" onChange={(e) => setType(e.target.value)} className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
             <option value="">Free</option>
             <option value="">Paid</option>
           </select>
@@ -91,13 +92,13 @@ function Add() {
 
         <div className=''>
           <p className='mb-2'>Product name:</p>
-          <input className='rounded px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="number" placeholder='enter amount' required />
+          <input onChange={(e) => setPrice(e.target.value)} value={price} className='rounded px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="number" placeholder='enter amount' required />
         </div>
 
       </div>
 
       <div className='w-full flex gap-2 mt-2'>
-        <input className='' type="checkbox" id="bestseller" />
+        <input onChange={(e) => setBestSeller(prev => !prev)} checked={bestSeller} className='' type="checkbox" id="bestseller" />
         <label className='cursor-pointer' htmlFor="bestseller">Add to best seller</label>
       </div>
 
