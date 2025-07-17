@@ -45,6 +45,7 @@ function Add({token}) {
         toast.success(response.data.message);
 
         setName("");
+        setDescription("");
         setImage1(false);
         setImage2(false);
         setImage3(false);
