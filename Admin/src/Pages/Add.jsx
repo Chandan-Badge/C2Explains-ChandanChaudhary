@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { assets } from '../assets/assets.js';
 import axios from "axios";
 import { backendUrl } from "../App.jsx";
+import { toast } from 'react-toastify';
 
 function Add({token}) {
 
@@ -12,7 +13,7 @@ function Add({token}) {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = ("");
+  const [price, setPrice] = useState("");
   const [category, setCategory] = useState("Button");
   const [subCategory, setSubCategory] = useState("Frontend");
   const [type, setType] = useState("Free");
@@ -38,11 +39,25 @@ function Add({token}) {
       image4 && formData.append("image4", image4);
 
       const response = await axios.post(backendUrl + "/api/product/add", formData,{headers: {token}});
-      console.log(response.data);
+      // console.log(response.data);
+
+      if(response.data.success) {
+        toast.success(response.data.message);
+
+        setName("");
+        setImage1(false);
+        setImage2(false);
+        setImage3(false);
+        setImage4(false);
+
+        setPrice("");
+      } else {
+        toast.error(response.data.message);
+      }
 
     } catch (error) {
       console.log(error);
-      
+      toast.error(error.message);
     }
   }
 
@@ -86,7 +101,7 @@ function Add({token}) {
         <textarea onChange={(e) => setDescription(e.target.value)} value={description} className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500 focus-within:outline-[#c586a5]' rows={4} type="text" placeholder='write about content here' required ></textarea>
       </div>
 
-      <div className='flex gap-3 sm:gap-10 w-full flex-col sm:flex-row'>
+      <div className='flex gap-3 sm:gap-10 w-full flex-col md:flex-row'>
 
         <div className=''>
           <p className='mb-2'>Product category:</p>
