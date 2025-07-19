@@ -54,11 +54,11 @@ function List({ token }) {
 
   return (
     <>
-      <p className='mb-2 font-bold text-2xl text-[#b6bee5]'>All Product List</p>
+      <p className='mb-2 font-bold text-3xl text-[#b6bee5]'>All Product List</p>
       <div className='flex flex-col gap-2'>
 
         {/* Product title */}
-        <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] text-sm font-semibold bg-gray-800/50 items-center py-2 px-4 border border-gray-400/80'>
+        <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] text-sm font-semibold bg-gray-800/80 items-center py-2 px-4 border border-gray-400/80'>
           <p>Image</p>
           <p>Name</p>
           <p>Category</p>
