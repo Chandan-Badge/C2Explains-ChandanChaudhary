@@ -145,8 +145,8 @@ function Add({token}) {
       </div>
 
       <div className='w-full flex gap-2 mt-2'>
-        <input onChange={(e) => setBestSeller(prev => !prev)} checked={bestSeller} className='' type="checkbox" id="bestseller" />
-        <label className='cursor-pointer' htmlFor="bestseller">Add to best seller</label>
+        <input onChange={(e) => setBestSeller(prev => !prev)} checked={bestSeller} className='' type="checkbox" id="bestSeller" />
+        <label className='cursor-pointer' htmlFor="bestSeller">Add to best seller</label>
       </div>
 
       <button type="submit" className='font-medium text-sm sm:text-base bg-gray-800 hover:bg-gray-900 border border-gray-700 py-3 px-20 mt-4 transition-all duration-300 ease-in-out'>ADD</button>

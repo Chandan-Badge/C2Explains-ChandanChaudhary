@@ -51,7 +51,7 @@ function Collection() {
 
     useEffect(() => {
       setFilterProducts(products);
-    }, [products]);
+    }, []);
 
     // useEffect(() => {
     //   console.log(category);
@@ -63,7 +63,7 @@ function Collection() {
 
     useEffect(() => {
       applyFilter();
-    }, [category, type]);
+    }, [category, type, products]);
 
     // Sort product on the basis of there price
     const sortProduct = () => {
