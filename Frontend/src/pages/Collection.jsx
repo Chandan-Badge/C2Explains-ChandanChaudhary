@@ -51,7 +51,7 @@ function Collection() {
 
     useEffect(() => {
       setFilterProducts(products);
-    }, []);
+    }, [products]);
 
     // useEffect(() => {
     //   console.log(category);

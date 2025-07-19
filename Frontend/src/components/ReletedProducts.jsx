@@ -17,7 +17,7 @@ function ReletedProducts({category, subCategory}) {
 
             setRelated(productsCopy.slice(0, 4));
         }
-    }, [])
+    }, [products])
 
   return (
     <div className='flex flex-col bg-[#181e33]/50 border border-[#b6bee5]/50 rounded-lg mt-12 w-[100%] px-8 sm:px-10 py-8 justify-start items-start'>

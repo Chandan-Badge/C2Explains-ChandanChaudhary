@@ -33,11 +33,11 @@ function SidebarMenu() {
 
         <NavLink to="/stack-images" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6 group'>
             <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p className='relative'>Stack images 
+            <div className='relative'>Stack images 
                 <span className='flex justify-center items-center h-[18px] bg-[#fbc638] rotate-12 group-hover:-translate-y-1 absolute rounded-full py-0 px-1.5 -right-5 -top-3 transition-all ease-in-out duration-300'>
                     <p className='text-[8px] md:text-[10px] font-semibold text-black'>new</p>
                 </span>
-            </p>
+            </div>
         </NavLink>
 
         <NavLink to="/about" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
