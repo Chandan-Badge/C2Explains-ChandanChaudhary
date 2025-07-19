@@ -54,7 +54,7 @@ function List({ token }) {
 
   return (
     <>
-      <p className='mb-2 font-bold text-2xl'>All Product List</p>
+      <p className='mb-2 font-bold text-2xl text-[#b6bee5]'>All Product List</p>
       <div className='flex flex-col gap-2'>
 
         {/* Product title */}
@@ -73,8 +73,10 @@ function List({ token }) {
               <img src={item.image[0]} className='w-12' alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
-              <p>{currency} {item.price}</p>
-              <p onClick={() => removeProduct(item._id)} className='text-right md:text-center cursor-pointer text-lg text-red-800'>X</p>
+              <p>{currency} {item.price} {(item.price === 0) && <span className='text-[#b6bee5] text-xs ml-1'>Free</span>}</p>
+              <div className='text-right md:text-center text-lg text-red-700'>
+                <button onClick={() => removeProduct(item._id)} className='text-lg text-red-700 cursor-pointer hover:text-red-500 hover:bg-gray-500/20 px-3 py-1 rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(38,255,226,0.1)] active:scale-95'>X</button>
+              </div>
             </div>
           ))
         }

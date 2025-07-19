@@ -53,6 +53,7 @@ function Add({token}) {
 
         setPrice("");
       } else {
+        console.log(response.data.message);
         toast.error(response.data.message);
       }
 
@@ -107,32 +108,32 @@ function Add({token}) {
         <div className=''>
           <p className='mb-2'>Product category:</p>
           <select name="" id="" onChange={(e) => setCategory(e.target.value)} className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
-            <option value="">Button</option>
-            <option value="">Card</option>
-            <option value="">Loader</option>
-            <option value="">Radio Button</option>
-            <option value="">Checkbox</option>
-            <option value="">Input</option>
-            <option value="">Switch</option>
-            <option value="">Form</option>
-            <option value="">Tooltip</option>
-            <option value="">Background</option>
+            <option value="Button">Button</option>
+            <option value="Card">Card</option>
+            <option value="Loader">Loader</option>
+            <option value="Radio Button">Radio Button</option>
+            <option value="Checkbox">Checkbox</option>
+            <option value="Input">Input</option>
+            <option value="Switch">Switch</option>
+            <option value="Form">Form</option>
+            <option value="Tooltip">Tooltip</option>
+            <option value="Background">Background</option>
           </select>
         </div>
 
         <div className=''>
           <p className='mb-2'>Sub category:</p>
           <select name="" id="" onChange={(e) => setSubCategory(e.target.value)} className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
-            <option value="">Frontend</option>
-            <option value="">Backend</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
           </select>
         </div>
 
         <div className=''>
           <p className='mb-2'>Product type:</p>
           <select name="" id="" onChange={(e) => setType(e.target.value)} className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
-            <option value="">Free</option>
-            <option value="">Paid</option>
+            <option value="Free">Free</option>
+            <option value="Paid">Paid</option>
           </select>
         </div>
 
