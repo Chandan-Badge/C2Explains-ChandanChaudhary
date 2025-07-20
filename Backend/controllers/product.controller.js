@@ -4,7 +4,7 @@ import productModel from "../models/product.model.js";
 // function for add product
 const addProduct = async (req, res) => {
     try {
-        const {name, description, price, image, category, subCategory, type, date, bestseller} = req.body;
+        const {name, description, price, image, category, subCategory, type, date, bestSeller} = req.body;
 
         const image1 = req.files.image1 && req.files.image1[0];
         const image2 = req.files.image2 && req.files.image2[0];
@@ -30,7 +30,7 @@ const addProduct = async (req, res) => {
             subCategory,
             type,
             date: Date.now(),
-            bestseller: bestseller === "true" ? true : false
+            bestSeller: bestSeller === "true" ? true : false
         }
 
         console.log(productData);
@@ -38,7 +38,7 @@ const addProduct = async (req, res) => {
         const product = new productModel(productData);
         await product.save();
 
-        // console.log(name, description, price, image, category, subCategory, type, date, bestseller);
+        // console.log(name, description, price, image, category, subCategory, type, date, bestSeller);
         // console.log(image1, image2, image3, image4);
         // console.log(images);
         // console.log(imageUrl);
