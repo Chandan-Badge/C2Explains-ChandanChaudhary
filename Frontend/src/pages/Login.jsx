@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
+import { ShopContext } from '../context/shopContext';
+import axios from 'axios';
 
 function Login() {
 
+  const {token, setToken, navigate, backendUrl} = useContext(ShopContext);
   const [currentState, setCurrentState] = useState("Sign up");
 
-  const onSubmitHandler = async (event) => {
-    
-    toast.success("Login successful")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  const onSubmitHandler = async (event) => {
+    toast.success("Login successful")
     event.preventDefault();
+
+    try {
+      if(currentState == "Sign up") {
+        const response = await axios.post(backendUrl + "/api/user/registration", {name, email, password});
+
+      } else {
+
+      }
+      
+    } catch (error) {
+      
+    }
   }
   
   return (
@@ -20,9 +37,9 @@ function Login() {
           <hr className='border-none h-[1.5px] w-8 bg-gray-300' />
         </div>
 
-        {currentState === "Login" ? "" : <input type="text" className='w-full px-3 py-2 border border-gray-300 bg-gray-900 rounded' placeholder='Name' required />}
-        <input type="email" className='w-full px-3 py-2 border border-gray-300 bg-gray-900 rounded' placeholder='Email' required />
-        <input type="password" className='w-full px-3 py-2 border border-gray-300 bg-gray-900 rounded' placeholder='Password' required />
+        {currentState === "Login" ? "" : <input type="text" onChange={(e) => setName(e.target.value)} value={name} className='w-full px-3 py-2 border border-gray-300 bg-gray-900 rounded' placeholder='Name' required />}
+        <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} className='w-full px-3 py-2 border border-gray-300 bg-gray-900 rounded' placeholder='Email' required />
+        <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} className='w-full px-3 py-2 border border-gray-300 bg-gray-900 rounded' placeholder='Password' required />
 
         <div className='w-full flex justify-between text-sm -mt-2'>
           <p className='cursor-pointer text-gray-300 hover:text-gray-100'>Forget your password?</p>
