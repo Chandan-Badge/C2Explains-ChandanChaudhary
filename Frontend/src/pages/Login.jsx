@@ -18,10 +18,19 @@ function Login() {
 
     try {
       if(currentState == "Sign up") {
-        const response = await axios.post(backendUrl + "/api/user/registration", {name, email, password});
+        const response = await axios.post(backendUrl + "/api/user/register", {name, email, password});
+        // console.log(response.data);
+
+        if(response.data.success) {
+          setToken(response.data.token);
+          localStorage.setItem("token", response.data.token);
+        } else {
+          toast.error(response.data.message);
+        }
 
       } else {
-
+        const response = await axios.post(backendUrl + "/api/user/login", {email, password});
+        console.log(response.date);
       }
       
     } catch (error) {
