@@ -13,7 +13,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const onSubmitHandler = async (event) => {
-    toast.success("Login successful")
+    // toast.success("Login successful");
     event.preventDefault();
 
     try {
@@ -22,6 +22,8 @@ function Login() {
         // console.log(response.data);
 
         if(response.data.success) {
+          toast.success("Login successful");
+
           setToken(response.data.token);
           localStorage.setItem("token", response.data.token);
         } else {
@@ -30,11 +32,22 @@ function Login() {
 
       } else {
         const response = await axios.post(backendUrl + "/api/user/login", {email, password});
-        console.log(response.date);
+
+        if(response.data.success) {
+          toast.success("Login successful");
+
+          setToken(response.data.token);
+          localStorage.setItem("token", response.data.token);
+          console.log(response.data);
+
+        } else {
+          toast.error(response.data.message);
+        }
       }
       
     } catch (error) {
-      
+      console.log(error);
+      toast.error(error.message);
     }
   }
   
