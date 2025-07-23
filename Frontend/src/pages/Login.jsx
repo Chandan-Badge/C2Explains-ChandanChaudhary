@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { ShopContext } from '../context/shopContext';
 import axios from 'axios';
@@ -6,7 +6,7 @@ import axios from 'axios';
 function Login() {
 
   const {token, setToken, navigate, backendUrl} = useContext(ShopContext);
-  const [currentState, setCurrentState] = useState("Sign up");
+  const [currentState, setCurrentState] = useState("Login");
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -50,6 +50,12 @@ function Login() {
       toast.error(error.message);
     }
   }
+
+  useEffect(() => {
+    if(token) {
+      navigate("/");
+    }
+  }, [token])
   
   return (
     <div className='min-h-[80vh] mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
