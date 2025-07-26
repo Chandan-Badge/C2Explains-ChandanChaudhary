@@ -43,6 +43,19 @@ const ShopContextProvider = (probs) => {
         }
 
         setCartItems(cartData);
+
+        if(token) {
+            try {
+                
+                await axios.post(backendUrl + "/api/cart/add", {itemId}, {headers: {token}});
+
+            } catch (error) {
+                
+                console.log(error);
+                toast.error(error.message)
+
+            }
+        }
     }
 
     useEffect(() => {
