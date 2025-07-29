@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/shopContext';
 import Title from "../components/Title.jsx";
 import { products } from '../assets/assets.js';
@@ -11,20 +11,22 @@ function Cart() {
   const [cartData, setCartData] = useState([]);
   
   useEffect(() => {
-    const tempData = [];
+  const tempData = [];
 
-    for(const item in cartItems) {
-      if(cartItems[item] > 0) {
+  for(const item in cartItems) {
+    if(cartItems[item] > 0) {
+      const productExists = products.find((product) => product._id === item);
+      if (productExists) {
         tempData.push({
           _id: item,
           quantity: cartItems[item]
-        })
+        });
       }
     }
+  }
 
-    // console.log(tempData);
     setCartData(tempData);
-  }, [cartItems]);
+  }, [cartItems, products]);
 
   return (
     <div className='mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8 min-h-[65vh]'>
@@ -37,7 +39,7 @@ function Cart() {
         {
           cartData.map((item, index) => {
             const productData = products.find((product) => product._id === item._id);
-            // if (!productData) return null; // Skip if product not found
+            if (!productData) return null; // Skip if product not found
 
             return (
               <div key={index} className='py-4 border-b border-[#b6bee5]/50 text-gray-300 items-center gap-4 flex justify-between px-3 sm:px-4'> 
