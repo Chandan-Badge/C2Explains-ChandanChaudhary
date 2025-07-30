@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/shopContext';
 import Title from "../components/Title.jsx";
-import { products } from '../assets/assets.js';
+// import { products } from '../assets/assets.js';
 import CartTotal from '../components/CartTotal.jsx';
 
 function Cart() {
 
-  const {product, currency, cartItems, updateQuantity, navigate} = useContext(ShopContext);
+  const {products, currency, cartItems, updateQuantity, navigate} = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
   
@@ -37,12 +37,12 @@ function Cart() {
         {
           cartData.map((item, index) => {
             const productData = products.find((product) => product._id === item._id);
-            if (!productData) return null; // Skip if product not found
+            // if (!productData) return null; // Skip if product not found
 
             return (
               <div key={index} className='py-4 border-b border-[#b6bee5]/50 text-gray-300 items-center gap-4 flex justify-between px-3 sm:px-4'> 
                 <div className='flex gap-3 sm:gap-6 items-center '>
-                  <img src={productData.image} alt="" className='w-20' />
+                  <img src={productData.image[0]} alt="" className='w-20' />
 
                   <div>
                     <p className='text-base md:text-lg font-medium' >{productData.name}</p>

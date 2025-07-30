@@ -7,7 +7,7 @@ const addToCart = async (req, res) => {
         const { userId, itemId } = req.body;
 
         const userData = await userModel.findById(userId);
-        let cartData = userData.cartData || {};
+        let cartData = await userData.cartData;
 
         if(cartData[itemId]) {
             // if(cartData[itemId]) {
@@ -17,7 +17,7 @@ const addToCart = async (req, res) => {
             //     cartData[itemId] = 1;
             // }
         } else {
-            // cartData[itemId] = {};
+            cartData[itemId] = {};
             cartData[itemId] = 1;
         }
 
