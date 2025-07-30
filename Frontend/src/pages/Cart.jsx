@@ -11,20 +11,24 @@ function Cart() {
   const [cartData, setCartData] = useState([]);
   
   useEffect(() => {
-    const tempData = [];
 
-    for(const item in cartItems) {
-      if(cartItems[item] > 0) {
-        tempData.push({
-          _id: item,
-          quantity: cartItems[item]
-        })
+    if(products.length > 0) {
+      const tempData = [];
+  
+      for(const item in cartItems) {
+        if(cartItems[item] > 0) {
+          tempData.push({
+            _id: item,
+            quantity: cartItems[item]
+          })
+        }
       }
+  
+      // console.log(tempData);
+      setCartData(tempData);
     }
 
-    // console.log(tempData);
-    setCartData(tempData);
-  }, [cartItems]);
+  }, [cartItems, products]);
 
   return (
     <div className='mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8 min-h-[65vh]'>
