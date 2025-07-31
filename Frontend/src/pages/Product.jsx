@@ -39,7 +39,7 @@ function Product() {
 
   return productData ? (
     <div className='mt-28 w-full flex justify-center sm:justify-end pl-0 sm:pl-20 lg:pl-16 pr-0 sm:pr-8 lg:pr-16 text-[#fff] min-h-[80vh]'>
-      <div className='w-[85%] flex flex-col justify-center items-center'>
+      <div className='w-[85%] flex flex-col justify-center items-center gap-10'>
 
         <div className='w-full flex justify-between'>
           <Link to={"/collection"} className='w-max mb-3 flex items-center gap-1 text-sm hover:bg-[#181e33] transition-all px-4 py-2 rounded-full'>

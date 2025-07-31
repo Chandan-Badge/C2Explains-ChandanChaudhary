@@ -183,7 +183,7 @@ function Collection() {
         </div>
 
         {/* All Products */}
-        <div className='flex flex-wrap justify-around gap-10 gap-y-6 my-12 px-4 md:px-10'>
+        <div className='flex flex-wrap justify-around gap-10 gap-y-10 my-12 px-4 md:px-10'>
 
           {
             filterProducts.map((item, index) => (

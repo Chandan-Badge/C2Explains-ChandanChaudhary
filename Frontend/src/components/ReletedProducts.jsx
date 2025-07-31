@@ -25,7 +25,7 @@ function ReletedProducts({category, subCategory}) {
             <Title text1={"Related"} text2={"Product"} />
         </div>
 
-        <div className='flex flex-wrap justify-evenly gap-14 gap-y-6 px-2 sm:px-5 mb-4'>
+        <div className='flex flex-wrap justify-evenly gap-14 xl:gap-20 gap-y-6 px-2 sm:px-5 mt-2 mb-4'>
             {
                 related.map((item, index) => (
                     <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
