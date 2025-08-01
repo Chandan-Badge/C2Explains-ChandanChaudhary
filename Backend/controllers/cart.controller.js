@@ -17,7 +17,7 @@ const addToCart = async (req, res) => {
             //     cartData[itemId] = 1;
             // }
         } else {
-            cartData[itemId] = {};
+            // cartData[itemId] = {};
             cartData[itemId] = 1;
         }
 
