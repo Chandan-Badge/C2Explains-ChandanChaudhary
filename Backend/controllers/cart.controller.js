@@ -7,11 +7,13 @@ const addToCart = async (req, res) => {
         const { userId, itemId } = req.body;
 
         const userData = await userModel.findById(userId);
-        let cartData = await userData.cartData;
+        let cartData = await userData.cartItem;
 
         if(cartData[itemId]) {
             // if(cartData[itemId]) {
                 cartData[itemId] += 1;
+                // console.log("true");
+                
             // }
             // else {
             //     cartData[itemId] = 1;
@@ -19,11 +21,33 @@ const addToCart = async (req, res) => {
         } else {
             // cartData[itemId] = {};
             cartData[itemId] = 1;
+            // console.log("false");
         }
 
-        await userModel.findByIdAndUpdate(userId, {cartData});
+        await userModel.findByIdAndUpdate(userId, { cartData });
+        // await cartData.save();
+        console.log(userData);
+        console.log(cartData);
 
         res.json({ success: true, message: "Added To Cart" });
+
+        // const userData = await userModel.findById(userId);
+        // if (!userData) {
+        // return res.json({ success: false, message: "User not found" });
+        // }
+        // let cartData = userData.cartItem || {};
+
+        // if (cartData[itemId]) {
+        // cartData[itemId] += 1;
+        // } else {
+        // cartData[itemId] = 1;
+        // }
+
+        // await userModel.findByIdAndUpdate(userId, { $set: { cartData } });
+        // console.log(userData);
+        // console.log(cartData);
+
+        // res.json({ success: true, message: "Added To Cart" });
 
     } catch (error) {
         console.log(error);
