@@ -6,7 +6,7 @@ import CartTotal from '../components/CartTotal.jsx';
 
 function Cart() {
 
-  const {products, currency, cartItems, updateQuantity, navigate} = useContext(ShopContext);
+  const {products, currency, cartItem, updateQuantity, navigate} = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
   
@@ -15,11 +15,11 @@ function Cart() {
     if(products.length > 0) {
       const tempData = [];
   
-      for(const item in cartItems) {
-        if(cartItems[item] > 0) {
+      for(const item in cartItem) {
+        if(cartItem[item] > 0) {
           tempData.push({
             _id: item,
-            quantity: cartItems[item]
+            quantity: cartItem[item]
           })
         }
       }
@@ -28,7 +28,7 @@ function Cart() {
       setCartData(tempData);
     }
 
-  }, [cartItems, products]);
+  }, [cartItem, products]);
 
   return (
     <div className='mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8 min-h-[65vh]'>
