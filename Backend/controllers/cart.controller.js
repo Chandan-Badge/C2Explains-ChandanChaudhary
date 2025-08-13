@@ -7,25 +7,27 @@ const addToCart = async (req, res) => {
         const { userId, itemId } = req.body;
 
         const userData = await userModel.findById(userId);
-        let cartData = await userData.cartItem;
+        let cartData = await userData.cartItem || {};
+
+        console.log(itemId);
+        console.log(cartData[itemId]);
 
         if(cartData[itemId]) {
             // if(cartData[itemId]) {
                 cartData[itemId] += 1;
-                // console.log("true");
+                console.log("true");
                 
             // }
             // else {
             //     cartData[itemId] = 1;
             // }
         } else {
-            // cartData[itemId] = {};
+            cartData[itemId] = {};
             cartData[itemId] = 1;
-            // console.log("false");
+            console.log("false");
         }
 
         await userModel.findByIdAndUpdate(userId, { cartData });
-        // await cartData.save();
         console.log(userData);
         console.log(cartData);
 
