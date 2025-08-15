@@ -1,4 +1,4 @@
-import orderModel from "../models/order.model"
+import orderModel from "../models/order.model.js"
 
 
 // ==> Placing order using COD
@@ -23,7 +23,7 @@ const placeOrderStripe = async (req, res) => {
             items,
             amount,
             paymentMethod: "POS",
-            payment: false,
+            payment: true,
             date: Date.now()
         };
     

@@ -2,13 +2,28 @@ import React, { useContext } from 'react';
 import Title from '../components/Title';
 import CartTotal from '../components/CartTotal';
 import { ShopContext } from '../context/shopContext';
+import { useState } from 'react';
 
 function Payment() {
 
+  const [method, setMethod] = useState();
   const {navigate} = useContext(ShopContext);
 
+  const [formData, setFormData] = useState({
+    firstName:"",
+    lastName:"",
+    email:""
+  })
+
+  const onChangeHandler = (event) => {
+    const name = event.target.namel;
+    const value = event.target.email;
+
+    setFormData(data => ({...data, [name]:value}))
+  }
+
   return (
-    <div className='flex  gap-4 pt-5 sm:pt-14 min-h-[80vh] mt-6 md:mt-10 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
+    <form className='flex gap-4 pt-5 sm:pt-14 min-h-[80vh] mt-6 md:mt-10 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
 
         <div className='text-2xl sm:text-3xl my-3'>
@@ -16,8 +31,8 @@ function Payment() {
         </div>
 
         <div className='flex gap-3'>
-          <input type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='First name' />
-          <input type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='Last name' />
+          <input onChange={onChangeHandler} name="firstName" value={formData.firstName} type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='First name' />
+          <input onChange={onChangeHandler} name="lastName" value={formData.lastName} type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='Last name' />
         </div>
         
         <input type="email" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='enter email' />
@@ -31,7 +46,7 @@ function Payment() {
         </div>
       </div>
       
-    </div>
+    </form>
   )
 }
 
