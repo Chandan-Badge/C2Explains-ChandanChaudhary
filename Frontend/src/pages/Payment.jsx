@@ -6,13 +6,13 @@ import { useState } from 'react';
 
 function Payment() {
 
-  const [method, setMethod] = useState();
-  const {navigate, backendUrl, token, cartItem, setCartItems, getCartAmount, products } = useContext(ShopContext);
+  const [method, setMethod] = useState('');
+  const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, products } = useContext(ShopContext);
 
   const [formData, setFormData] = useState({
-    firstName:"",
-    lastName:"",
-    email:""
+    firstName:'',
+    lastName:'',
+    email:''
   })
 
   const onChangeHandler = (event) => {
@@ -29,18 +29,23 @@ function Payment() {
       
       let orderItems = [];
 
-      for(const items in cartItem) {
-        for(const item in cartItem[items]) {
-          if(cartItem[items][item] > 0) {
+      for(const items in cartItems) {
+        for(const item in cartItems[items]) {
+          if(cartItems[items][item] > 0) {
             const itemInfo = structuredClone(products.find(product => product._id === items));
+            console.log(itemInfo);
 
-            itemInfo.quantity = cartItem[items][item]
+            if(itemInfo) {
+              itemInfo.quantity = cartItems[items][item];
+              orderItems.push(itemInfo);
+            }
           }
         }
       }
-
+        
+        console.log(orderItems);
     } catch (error) {
-      
+      console.log(error);  
     }
   }
 
@@ -53,11 +58,11 @@ function Payment() {
         </div>
 
         <div className='flex gap-3'>
-          <input onChange={onChangeHandler} name="firstName" value={formData.firstName} type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='First name' required />
-          <input onChange={onChangeHandler} name="lastName" value={formData.lastName} type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='Last name' required />
+          <input onChange={onChangeHandler} name="firstName" value={formData.firstName} type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full text-white' placeholder='First name' required />
+          <input onChange={onChangeHandler} name="lastName" value={formData.lastName} type="text" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full text-white' placeholder='Last name' required />
         </div>
         
-        <input onChange={onChangeHandler} name="email" value={formData.email} type="email" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full' placeholder='enter email' required />
+        <input onChange={onChangeHandler} name="email" value={formData.email} type="email" className='border border-gray-300 bg-gray-900 rounded py-1.5 px-3.5 w-full text-white' placeholder='enter email' required />
 
         <div className='mt-4 min-w-80 text-white text-2xl sm:text-3xl'>
           <CartTotal />

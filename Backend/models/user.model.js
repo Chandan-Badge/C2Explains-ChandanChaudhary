@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
-    cartItem: {
+    cartItems: {
         type: Object,
         default: {}
     },

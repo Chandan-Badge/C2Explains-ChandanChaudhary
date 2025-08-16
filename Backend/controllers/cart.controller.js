@@ -7,7 +7,7 @@ const addToCart = async (req, res) => {
         const { userId, itemId } = req.body;
 
         const userData = await userModel.findById(userId);
-        let cartData = await userData.cartItem || {};
+        let cartData = await userData.cartItems || {};
 
         console.log(itemId);
         console.log(cartData[itemId]);
@@ -37,7 +37,7 @@ const addToCart = async (req, res) => {
         // if (!userData) {
         // return res.json({ success: false, message: "User not found" });
         // }
-        // let cartData = userData.cartItem || {};
+        // let cartData = userData.cartItems || {};
 
         // if (cartData[itemId]) {
         // cartData[itemId] += 1;
@@ -64,7 +64,7 @@ const updateCart = async (req, res) => {
         const { userId, itemId, quantity } = req.body;
 
         const userData = await userModel.findById(userId);
-        let cartData = await userData.cartItem;
+        let cartData = await userData.cartItems;
 
         cartData[itemId] = quantity;
 
@@ -87,7 +87,7 @@ const getUserCart = async (req, res) => {
         const { userId } = req.body;
     
         const userData = await userModel.findById(userId);
-        let cartData = await userData.cartItem;
+        let cartData = await userData.cartItems;
     
         res.json({ success: true, cartData });
 
