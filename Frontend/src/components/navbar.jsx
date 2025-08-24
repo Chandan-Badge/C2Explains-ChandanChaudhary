@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import {assets} from "../assets/assets.js";
 import {NavLink} from "react-router-dom";
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar.jsx';
-import { ShopContext } from '../context/shopContext.jsx';
+import SearchBar from './SearchBar';
+import { ShopContext } from '../context/shopContext';
 import { toast } from 'react-toastify';
 
 function Navbar() {
