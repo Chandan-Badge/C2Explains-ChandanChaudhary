@@ -24,8 +24,9 @@ const ShopContextProvider = (probs) => {
     const addToCart = async (itemId) => {
         
         toast.success("Added in the cart.");
-
+        
         let cartData = structuredClone(cartItems);
+        cartData[itemId] = 1;
 
         if(cartData[itemId]) {
             // if(cartData[itemId]) {
@@ -36,10 +37,10 @@ const ShopContextProvider = (probs) => {
             // }
             // toast.success("Added in the cart.");
             cartData[itemId] += 1;
+            console.log(cartData[itemId]);
             
-
         } else {
-            cartData[itemId] = {};
+            // cartData[itemId] = {};
             cartData[itemId] = 1;
         }
 

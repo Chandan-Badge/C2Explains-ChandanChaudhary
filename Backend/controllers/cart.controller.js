@@ -10,6 +10,7 @@ const addToCart = async (req, res) => {
         let cartData = await userData.cartItems || {};
 
         console.log(itemId);
+        cartData[itemId] = 1;
         console.log(cartData[itemId]);
 
         if(cartData[itemId]) {
@@ -22,7 +23,7 @@ const addToCart = async (req, res) => {
             //     cartData[itemId] = 1;
             // }
         } else {
-            cartData[itemId] = {};
+            // cartData[itemId] = {};
             cartData[itemId] = 1;
             console.log("false");
         }
