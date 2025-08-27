@@ -74,7 +74,7 @@ function Navbar() {
     // Profile btn
     const [profileBtn, setProfileBtn] = useState(false);
 
-    // let profile = profileBtn ? "block" : "hidden";
+    let profile = profileBtn ? "block" : "hidden";
 
   return (
     <div className='px-4 sm:px-6 md:px-10 py-5 h-[10vh] bg-[#0d1224] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50 fixed top-0 w-full z-10'>
