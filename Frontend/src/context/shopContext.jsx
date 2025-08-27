@@ -26,7 +26,7 @@ const ShopContextProvider = (probs) => {
         toast.success("Added in the cart.");
         
         let cartData = structuredClone(cartItems);
-        cartData[itemId] = 1;
+        // cartData[itemId] = 1;
 
         if(cartData[itemId]) {
             // if(cartData[itemId]) {
