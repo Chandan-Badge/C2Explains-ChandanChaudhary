@@ -3,24 +3,24 @@ import {Router, Route, Routes} from 'react-router-dom';
 
 import "./App.css";
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Cart from './pages/Cart';
-import Login from './pages/Login';
-import Payment from './pages/Payment';
-import Orders from './pages/Orders';
-import Product from './pages/Product';
-import Contact from './pages/Contact';
-import Collection from './pages/Collection';
-import Navbar from "./components/Navbar";
-import SidebarMenu from './components/Sidebar-Menu';
-import Projects from './pages/Projects';
-import Quizes from './pages/Quizes';
-import Services from './pages/Services';
-import SourceCode from './pages/SourceCode';
-import StackImages from './pages/StackImages';
-import Footer from './components/Footer';
-import SearchBar from './components/SearchBar';
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Cart from './pages/Cart.jsx';
+import Login from './pages/Login.jsx';
+import Payment from './pages/Payment.jsx';
+import Orders from './pages/Orders.jsx';
+import Product from './pages/Product.jsx';
+import Contact from './pages/Contact.jsx';
+import Collection from './pages/Collection.jsx';
+import Navbar from "./components/Navbar.jsx";
+import SidebarMenu from './components/Sidebar-Menu.jsx';
+import Projects from './pages/Projects.jsx';
+import Quizes from './pages/Quizes.jsx';
+import Services from './pages/Services.jsx';
+import SourceCode from './pages/SourceCode.jsx';
+import StackImages from './pages/StackImages.jsx';
+import Footer from './components/Footer.jsx';
+import SearchBar from './components/SearchBar.jsx';
 
 import { ToastContainer, toast } from 'react-toastify';
 
