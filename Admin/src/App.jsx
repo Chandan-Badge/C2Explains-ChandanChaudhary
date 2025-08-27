@@ -4,9 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import Add from './Pages/Add';
 import List from './Pages/List';
 import Orders from './Pages/Orders';
-import Navbar from './Components/Navbar';
-import Sidebar from './Components/Sidebar';
-import Login from './Components/Login';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import Login from './components/Login';
 
 import { ToastContainer, toast } from 'react-toastify';
 
