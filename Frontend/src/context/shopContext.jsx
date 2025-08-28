@@ -38,13 +38,10 @@ const ShopContextProvider = (probs) => {
             // }
             // toast.success("Added in the cart.");
             cartData[productId] += 1;
-            // console.log(cartData[productId]);
-            // console.log("true");
             
         } else {
             // cartData[itemId] = {};
             cartData[productId] = 1;
-            // console.log("false");
         }
 
         setCartItems(cartData);
