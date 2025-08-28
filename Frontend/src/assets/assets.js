@@ -1,4 +1,4 @@
-import logo from "./C2-Logo-New Color.png";
+import logo from "./C2-Logo-New.png";
 
 import p_img1 from "./products/p_img1.png";
 import p_img2 from "./products/p_img2.png";

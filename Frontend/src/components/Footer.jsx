@@ -1,6 +1,8 @@
 import React from 'react'
-import logo from "../assets/c2-logo.png";
+// import logo from "../assets/c2-logo.png";
+import logo from "../assets/C2-Logo-New.png";
 import { Link } from "react-router-dom";
+import { assets } from '../assets/assets';
 
 function Footer() {
     
@@ -23,7 +25,7 @@ function Footer() {
                     <span className="invisible group-hover:visible text-gray-900 group-hover:flex bg-[#26ffe3] absolute top-5 left-1/2 -translate-x-1/2 px-3 py-1 rounded w-max items-center gap-1 after:content-[''] after:w-3 after:h-3 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-1 group-hover:-top-9 ease-jump duration-200">Back to top
                     </span>
 
-                    <img src={logo} className="w-full" alt="Logo" />
+                    <img src={assets.logo} className="w-full" alt="Logo" />
                 </div>
 
                 <div className="not-show-bottom flex flex-wrap items-center justify-around text-sm font-medium mb-1 text-gray-300 dark:text-gray-400 gap-4 md:gap-6 gap-y-2">
