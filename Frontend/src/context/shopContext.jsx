@@ -25,10 +25,11 @@ const ShopContextProvider = (probs) => {
         
         toast.success("Added in the cart.");
         
+        const productId = String(itemId);
         let cartData = structuredClone(cartItems);
         // cartData[itemId] = 1;
 
-        if(cartData[itemId]) {
+        if(cartData[productId]) {
             // if(cartData[itemId]) {
             //     cartData[itemId] += 1;
             // }
@@ -36,14 +37,14 @@ const ShopContextProvider = (probs) => {
             //     cartData[itemId] = 1;
             // }
             // toast.success("Added in the cart.");
-            cartData[itemId] += 1;
-            console.log(cartData[itemId]);
-            console.log("true");
+            cartData[productId] += 1;
+            // console.log(cartData[productId]);
+            // console.log("true");
             
         } else {
             // cartData[itemId] = {};
-            cartData[itemId] = 1;
-            console.log("false");
+            cartData[productId] = 1;
+            // console.log("false");
         }
 
         setCartItems(cartData);
@@ -51,7 +52,7 @@ const ShopContextProvider = (probs) => {
         if(token) {
             try {
                 
-                await axios.post(backendUrl + "/api/cart/add", {itemId}, {headers: {token}});
+                await axios.post(backendUrl + "/api/cart/add", {itemId: productId}, {headers: {token}});
 
             } catch (error) {
                 
@@ -132,11 +133,11 @@ const ShopContextProvider = (probs) => {
         }
     }
 
-    const getUserCart = async ( userId, token ) => {
+    const getUserCart = async ( authToken ) => {
 
         try {
             // const { userId } = req.body;
-            const response = await axios.post(backendUrl + "/api/cart/get", {}, {headers: {token}});
+            const response = await axios.post(backendUrl + "/api/cart/get", {}, {headers: {token: authToken || token}});
     
             if(response.data.success) {
                 setCartItems(response.data.cartData);
@@ -155,8 +156,9 @@ const ShopContextProvider = (probs) => {
 
     useEffect(() => {
         if(!token && localStorage.getItem("token")) {
-            setToken(localStorage.getItem("token"));
-            getUserCart(localStorage.getItem("token"));
+            const authToken = localStorage.getItem("token");
+            setToken(authToken);
+            getUserCart(authToken);
         }
     }, []);
 
