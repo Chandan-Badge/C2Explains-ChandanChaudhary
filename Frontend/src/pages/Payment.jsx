@@ -10,16 +10,16 @@ function Payment() {
   const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, products } = useContext(ShopContext);
 
   const [formData, setFormData] = useState({
-    firstName:'',
-    lastName:'',
-    email:''
+    firstName: '',
+    lastName: '',
+    email: ''
   })
 
   const onChangeHandler = (event) => {
-    const name = event.target.namel;
+    const name = event.target.name;
     const value = event.target.email;
 
-    setFormData(data => ({...data, [name]:value}))
+    setFormData(data => ({...data, [name]: value }))
   }
 
   const onSubmitHandler = async (event) => {
@@ -31,13 +31,17 @@ function Payment() {
 
       for(const items in cartItems) {
         for(const item in cartItems[items]) {
+          console.log(item, " & ", items);
+          
           if(cartItems[items][item] > 0) {
             const itemInfo = structuredClone(products.find(product => product._id === items));
-            console.log(itemInfo);
+            // console.log("1");
 
             if(itemInfo) {
               itemInfo.quantity = cartItems[items][item];
               orderItems.push(itemInfo);
+              // console.log("2");
+              
             }
           }
         }
