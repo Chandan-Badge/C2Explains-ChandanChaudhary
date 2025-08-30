@@ -163,7 +163,7 @@ const ShopContextProvider = (probs) => {
         products, currency,
         search, setSearch, showSearch, setShowSearch,
         searchBtn, setSearchBtn,
-        cartItems, addToCart,
+        cartItems, setCartItems, addToCart,
         getCartCount, updateQuantity,
         getCartAmount, navigate,
         backendUrl, token, setToken

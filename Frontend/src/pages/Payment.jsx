@@ -3,10 +3,12 @@ import Title from '../components/Title';
 import CartTotal from '../components/CartTotal';
 import { ShopContext } from '../context/shopContext';
 import { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Payment() {
 
-  const [method, setMethod] = useState('');
+  const [method, setMethod] = useState('POS');
   const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, products } = useContext(ShopContext);
 
   const [formData, setFormData] = useState({
@@ -54,7 +56,23 @@ function Payment() {
         }
       }
 
-      console.log(orderItems);
+      // console.log(orderItems);
+
+      const orderData = {
+        address: formData,
+        items: orderItems,
+        amount: getCartAmount()
+      }
+
+      const response = await axios.post(backendUrl + "api/orders/place", orderData, {headers: {token}})
+      console.log(response.data);
+      if(response.data.success) {
+        setCartItems({})
+        navigate("/orders")
+      } else {
+        toast.error(response.data.message);
+      }
+
     } catch (error) {
       console.log(error);  
     }
