@@ -19,7 +19,7 @@ function Payment() {
     const name = event.target.name;
     const value = event.target.email;
 
-    setFormData(data => ({...data, [name]: value }))
+    setFormData(data => ({...data, [name]: value }));
   }
 
   const onSubmitHandler = async (event) => {
@@ -29,25 +29,32 @@ function Payment() {
       
       let orderItems = [];
 
-      for(const items in cartItems) {
-        for(const item in cartItems[items]) {
-          console.log(item, " & ", items);
+      // for(const items in cartItems) {
+      //   for(const item in cartItems[items]) {
           
-          if(cartItems[items][item] > 0) {
-            const itemInfo = structuredClone(products.find(product => product._id === items));
-            // console.log("1");
+      //     if(cartItems[items][item] > 0) {
+      //       const itemInfo = structuredClone(products.find(product => product._id === items));
 
-            if(itemInfo) {
-              itemInfo.quantity = cartItems[items][item];
-              orderItems.push(itemInfo);
-              // console.log("2");
+      //       if(itemInfo) {
+      //         itemInfo.quantity = cartItems[items][item];
+      //         orderItems.push(itemInfo);
               
-            }
+      //       }
+      //     }
+      //   }
+      // }
+
+      for (const productId in cartItems) {
+        if (cartItems[productId] > 0) {
+          const itemInfo = structuredClone(products.find(product => product._id === productId));
+          if (itemInfo) {
+            itemInfo.quantity = cartItems[productId];
+            orderItems.push(itemInfo);
           }
         }
       }
-        
-        console.log(orderItems);
+
+      console.log(orderItems);
     } catch (error) {
       console.log(error);  
     }
