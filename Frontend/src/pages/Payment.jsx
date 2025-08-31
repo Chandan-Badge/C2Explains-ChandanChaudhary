@@ -64,11 +64,13 @@ function Payment() {
         amount: getCartAmount()
       }
 
-      const response = await axios.post(backendUrl + "api/orders/place", orderData, {headers: {token}})
+      const response = await axios.post(backendUrl + "api/orders/stripe", orderData, {headers: {token}})
       console.log(response.data);
+
       if(response.data.success) {
-        setCartItems({})
-        navigate("/orders")
+        setCartItems({});
+        navigate("/orders");
+
       } else {
         toast.error(response.data.message);
       }
