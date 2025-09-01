@@ -16,8 +16,24 @@ function Orders() {
       }
 
         const response = await axios.post(backendUrl + "/api/orders/userorders", {}, {headers: {token}});
-        console.log(response.data);
+        // console.log(response.data);
         
+        if(response.data.success) {
+          let allOrdersItem = [];
+
+          response.data.orders.map((order) => {
+            order.items.map((item) => {
+              item['status'] = order.status
+              item['payment'] = order.payment
+              item['paymentMethod'] = order.paymentMethod
+              item['date'] = order.date
+              allOrdersItem.push(item);
+            })
+          })
+
+          setOrderData(allOrdersItem.reverse());
+          
+        }
       
     } catch (error) {
       console.log(error);

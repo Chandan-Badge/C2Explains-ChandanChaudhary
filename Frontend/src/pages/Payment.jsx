@@ -65,7 +65,7 @@ function Payment() {
       }
 
       const response = await axios.post(backendUrl + "/api/orders/stripe", orderData, {headers: {token}});
-      console.log(response.data);
+      // console.log(response.data);
 
       if(response.data.success) {
         setCartItems({});
