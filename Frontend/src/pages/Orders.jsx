@@ -62,19 +62,19 @@ function Orders() {
                   <p className='text-base sm:text-lg font-medium'>{item.name}</p>
                   <div className='flex items-center gap-3 mt-2 text-sm text-gray-300'>
                     <p className=''>{currency}{item.price}</p>
-                    <p>Quantity: 1</p>
+                    <p>Quantity: {item.quantity}</p>
                   </div>
 
-                  <p className='mt-2'>Data: <span className='text-gray-400'>04/06/2025</span></p>
+                  <p className='mt-2'>Data: <span className='text-gray-400'>{new Date(item.date).toDateString()}</span></p>
                 </div>
               </div>
 
               <div className='flex items-center gap-2'>
                 <span className='min-w-2 h-2 rounded-full bg-green-500'></span>
-                <p className='text-sm md:text-base'>Success</p>
+                <p className='text-sm md:text-base'>{item.status}</p>
               </div>
 
-              <button className='w-max font-medium text-sm bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 px-8 py-3 transition-all duration-200 ease-in-out'>View Details</button>
+              <button onClick={loadOrderData} className='w-max font-medium text-sm bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 px-8 py-3 transition-all duration-200 ease-in-out'>View Details</button>
             </div>
           ))
         }
