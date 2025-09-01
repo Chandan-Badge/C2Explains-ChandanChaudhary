@@ -1,4 +1,5 @@
-import orderModel from "../models/order.model.js"
+import orderModel from "../models/order.model.js";
+import User from "../models/user.model.js";
 
 
 // ==> Placing order using COD
@@ -30,7 +31,7 @@ const placeOrderStripe = async (req, res) => {
         const newOrder = new orderModel(orderData);
         await newOrder.save();
     
-        await userModel.findByIdAndUpdate(userId, {cartData:{}});
+        await User.findByIdAndUpdate(userId, {cartData:{}});
     
         res.json({success:true, message: "Item Purchased"});
         

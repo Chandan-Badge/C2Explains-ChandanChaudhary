@@ -64,7 +64,10 @@ function Payment() {
         amount: getCartAmount()
       }
 
-      const response = await axios.post(backendUrl + "api/orders/stripe", orderData, {headers: {token}})
+      // if (!backendUrl || typeof backendUrl !== "string") {
+      //   throw new Error("Invalid backendUrl: " + backendUrl);
+      // }
+      const response = await axios.post(backendUrl + "/api/orders/stripe", orderData, {headers: {token}});
       console.log(response.data);
 
       if(response.data.success) {
@@ -76,7 +79,8 @@ function Payment() {
       }
 
     } catch (error) {
-      console.log(error);  
+      console.log(error);
+      toast.error(error.message)
     }
   }
 
