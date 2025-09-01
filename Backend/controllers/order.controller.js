@@ -3,7 +3,7 @@ import User from "../models/user.model.js";
 
 
 // ==> Placing order using COD
-const placeOrder = async () => {
+const placeOrder = async (req, res) => {
 
     try {
         
@@ -44,7 +44,7 @@ const placeOrderStripe = async (req, res) => {
 }
 
 // ==> Placing order using Razorpay
-const placeOrderRazorpay = async () => {
+const placeOrderRazorpay = async (req, res) => {
     
     try {
         
@@ -55,7 +55,7 @@ const placeOrderRazorpay = async () => {
 }
 
 // ==> All orders data for Admin Panel
-const allOrders = async () => {
+const allOrders = async (req, res) => {
         
     try {
         
@@ -66,18 +66,24 @@ const allOrders = async () => {
 }
 
 // ==> User order data for frontend
-const userOrders = async () => {
+const userOrders = async (req, res) => {
         
     try {
         
+        const { userId } = req.body;
+        const orders = await orderModel.find({ userId });
+
+        res.json({ success: true, orders });
+
     } catch (error) {
-        
+        console.log(error);
+        res.json({ success: false, message: error.message });
     }
     
 }
 
 // ==> Admin update the order status
-const updateStatus = async () => {
+const updateStatus = async (req, res) => {
         
     try {
         

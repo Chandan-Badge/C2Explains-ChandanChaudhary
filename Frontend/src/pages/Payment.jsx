@@ -64,9 +64,6 @@ function Payment() {
         amount: getCartAmount()
       }
 
-      // if (!backendUrl || typeof backendUrl !== "string") {
-      //   throw new Error("Invalid backendUrl: " + backendUrl);
-      // }
       const response = await axios.post(backendUrl + "/api/orders/stripe", orderData, {headers: {token}});
       console.log(response.data);
 
