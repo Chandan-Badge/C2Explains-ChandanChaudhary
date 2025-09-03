@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/shopContext.jsx';
 import Title from '../components/Title.jsx';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Orders() {
 
@@ -32,7 +33,7 @@ function Orders() {
           })
 
           setOrderData(allOrdersItem.reverse());
-          
+          toast.info("Status Updated");
         }
       
     } catch (error) {
@@ -74,7 +75,7 @@ function Orders() {
                 <p className='text-sm md:text-base'>{item.status}</p>
               </div>
 
-              <button onClick={loadOrderData} className='w-max font-medium text-sm bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 px-8 py-3 transition-all duration-200 ease-in-out'>View Details</button>
+              <button onClick={loadOrderData} className='w-max font-medium text-sm bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 px-8 py-3 transition-all duration-200 ease-in-out'>View Status</button>
             </div>
           ))
         }

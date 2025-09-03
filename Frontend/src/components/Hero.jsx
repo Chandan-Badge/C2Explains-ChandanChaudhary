@@ -12,7 +12,7 @@ function Hero() {
       </div>
 
       {/* <h1 className='text-7xl font-bold text-center'><span className='text-[#26ffe3]'>UI</span>Stack</h1> */}
-      <h2 className='text-4xl lg:text-5xl font-bold text-center max-w-[80%]'>Ultimate Destination for Software Developer's</h2>
+      <h2 className='text-4xl lg:text-5xl font-bold text-center max-w-[80%]'>Ultimate Destination for Web Developer's</h2>
       <p className='text-gray-400 text-base text-center max-w-[60vw] sm:max-w-[50vw]'>Accelerate your web development workflow, whether you're building sleek dashboards, dynamic landing pages, or scalable web applications, our components are built with accessibility, and modern design standards in mind.</p>
 
       <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 lg:gap-20 mt-6 lg:mt-10 text-sm sm:text-base'>
