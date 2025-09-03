@@ -27,6 +27,7 @@ import { ToastContainer, toast } from 'react-toastify';
 function App() {
   return (
     <div className='font-[poppins]'>
+      {/* <div className='absolute top-0 -translate-x-1/2 left-1/2 bg-red-700 text-[#fff] z-[100] px-6 py-1 text-xs sm:text-sm'>Note: This project is currently in developing phase...</div> */}
 
         <ToastContainer />
         <Navbar />

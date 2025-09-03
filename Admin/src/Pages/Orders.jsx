@@ -61,10 +61,10 @@ function Orders({ token }) {
                     {order.items.map((item, index) => {
                       if (index === order.items.length - 1) {
 
-                        return <p key={index}> {item.name} x {item.quantity} </p>
+                        return <p className='py-0.5' key={index}> {item.name} x {item.quantity} </p>
 
                       } else {
-                        return <p key={index}> {item.name} x {item.quantity}, </p>
+                        return <p className='py-0.5' key={index}> {item.name} x {item.quantity}, </p>
                       }
                     })}
                   </div>
@@ -72,7 +72,7 @@ function Orders({ token }) {
                 {/* <p> {order.firstName + " " + order.lastName} </p> */}
               </div>
 
-              <div className=''>
+              <div className='text-sm sm:text-base'>
                 <p className='text-[#b6bee5]'>Items: <span className='text-[#fff]'> {order.items.length} </span> </p>
                 <p className='text-[#b6bee5]'>Method: <span className='text-[#fff]'> {order.paymentMethod} </span> </p>
                 <p className='text-[#b6bee5]'>Payment: <span className='text-[#fff]'> { order.payment ? "Done" : "Pending"} </span> </p>
@@ -82,7 +82,7 @@ function Orders({ token }) {
               <p> {currency} {order.amount} </p>
 
               <div>
-                <select className='bg-[#0d1224] border border-gray-500 p-2'>
+                <select className='bg-[#0d1224] border border-gray-500 p-2 rounded font-semibold'>
                   <option value="">- Select -</option>
                   <option value="Payment Successful">Payment Successful</option>
                   <option value="Transaction Failed">Transaction Failed</option>
