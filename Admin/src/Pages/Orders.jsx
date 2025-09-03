@@ -30,6 +30,22 @@ function Orders({ token }) {
     }
   }
 
+  const statusHandler = async ( event, orderId ) => {
+
+    try {
+      const response = await axios.post(backendUrl + "/api/orders/status", { orderId, status:event.target.value }, { headers: {token} });
+  
+      if(response.data.success) {
+        await fetchAllData();
+      }
+      
+    } catch (error) {
+      console.log(error);
+      toast.error(response.data.message);
+    }
+
+  }
+
   useEffect(() => {
     fetchAllData();
   }, [token])
@@ -82,9 +98,9 @@ function Orders({ token }) {
               <p> {currency} {order.amount} </p>
 
               <div>
-                <select className='bg-[#0d1224] border border-gray-500 p-2 rounded font-semibold'>
-                  <option value="">- Select -</option>
-                  <option value="Payment Successful">Payment Successful</option>
+                <select value={order.status} className='bg-[#0d1224] border border-gray-500 p-2 rounded font-semibold'>
+                  <option>- Select -</option>
+                  <option value="Payment Successful">Transaction Successful</option>
                   <option value="Transaction Failed">Transaction Failed</option>
                 </select>
               </div>

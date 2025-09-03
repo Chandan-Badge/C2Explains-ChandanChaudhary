@@ -108,6 +108,7 @@ function Add({token}) {
         <div className=''>
           <p className='mb-2'>Product category:</p>
           <select name="" id="" onChange={(e) => setCategory(e.target.value)} className='bg-gray-900 border border-gray-500 rounded w-32 px-2 py-2'>
+            <option value="Animation">Animation</option>
             <option value="Button">Button</option>
             <option value="Card">Card</option>
             <option value="Loader">Loader</option>
