@@ -69,7 +69,7 @@ function List({ token }) {
         {/* Product list */}
         {
           list.map((item, index) => (
-            <div key={index} className='min-h-14 grid grid-cols-[1fr_3fr_1fr_1fr_1fr] text-sm font-semibold items-center py-2 px-4 gap-2 border border-gray-400/50'>
+            <div key={index} className='min-h-14 grid grid-cols-[1fr_3fr_1fr_1fr_1fr] text-sm font-semibold items-center py-2 px-4 gap-2 border border-gray-400/50 hover:bg-gray-800/80 duration-200 ease-in-out'>
               <img src={item.image[0]} className='w-12' alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
