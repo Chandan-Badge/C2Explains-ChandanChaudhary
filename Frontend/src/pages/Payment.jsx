@@ -68,8 +68,11 @@ function Payment() {
       // console.log(response.data);
 
       if(response.data.success) {
-        setCartItems({});
-        navigate("/orders");
+        // setCartItems({});
+        // navigate("/orders");
+
+        const {session_url} = response.data
+        window.location.replace(session_url)
 
       } else {
         toast.error(response.data.message);

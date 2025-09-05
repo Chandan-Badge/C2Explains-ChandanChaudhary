@@ -99,7 +99,7 @@ function Orders({ token }) {
 
               <div>
                 <select onChange={(event) => statusHandler(event, order._id)} value={order.status} className='bg-[#0d1224] border border-gray-500 p-2 rounded font-semibold'>
-                  <option>- Select -</option>
+                  {/* <option>- Select -</option> */}
                   <option value="Payment Successful">Transaction Successful</option>
                   <option value="Transaction Failed">Transaction Failed</option>
                 </select>

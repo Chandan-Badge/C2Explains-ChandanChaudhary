@@ -13,30 +13,30 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // ==> Placing order using COD
 const placeOrder = async (req, res) => {
 
-    try {
-        const { userId, items, amount } = req.body;
+    // try {
+    //     const { userId, items, amount } = req.body;
     
-        const orderData = {
-            userId,
-            items,
-            amount,
-            paymentMethod: "COD",
-            payment: true,
-            date: Date.now()
-        };
+    //     const orderData = {
+    //         userId,
+    //         items,
+    //         amount,
+    //         paymentMethod: "COD",
+    //         payment: true,
+    //         date: Date.now()
+    //     };
     
-        const newOrder = new orderModel(orderData);
-        await newOrder.save();
+    //     const newOrder = new orderModel(orderData);
+    //     await newOrder.save();
     
-        await User.findByIdAndUpdate(userId, {cartData:{}});
+    //     await User.findByIdAndUpdate(userId, {cartData:{}});
     
-        res.json({success:true, message: "Item Purchased"});
+    //     res.json({success:true, message: "Item Purchased"});
         
-    } catch (error) {
+    // } catch (error) {
 
-        console.log(error);
-        res.json({success:false, message: error.message});
-    }
+    //     console.log(error);
+    //     res.json({success:false, message: error.message});
+    // }
     
 }
 
@@ -51,8 +51,8 @@ const placeOrderStripe = async (req, res) => {
             userId,
             items,
             amount,
-            paymentMethod: "POS",
-            payment: true,
+            paymentMethod: "Stripe",
+            payment: false,
             date: Date.now()
         };
     
@@ -72,7 +72,7 @@ const placeOrderStripe = async (req, res) => {
         const session = await stripe.checkout.sessions.create({
             success_url: `${origin}/verify?success=true&orderId=${newOrder._id}`,
             cancel_url: `${origin}/verify?false=true&orderId=${newOrder._id}`,
-            line_items,
+            line_Items,
             mode: 'payment'
         })
     
