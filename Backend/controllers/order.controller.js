@@ -68,10 +68,18 @@ const placeOrderStripe = async (req, res) => {
                 unit_amount: item.price * 100
             },
         }))
+
+        const session = await stripe.checkout.sessions.create({
+            success_url: `${origin}/verify?success=true&orderId=${newOrder._id}`,
+            cancel_url: `${origin}/verify?false=true&orderId=${newOrder._id}`,
+            line_items,
+            mode: 'payment'
+        })
     
-        await User.findByIdAndUpdate(userId, {cartData:{}});
-    
-        res.json({success:true, message: "Item Purchased"});
+        // await User.findByIdAndUpdate(userId, {cartData:{}});
+        // res.json({success:true, message: "Item Purchased"});
+
+        res.json({success: true, success_url:success_url});
         
     } catch (error) {
 
