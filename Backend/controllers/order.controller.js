@@ -1,14 +1,41 @@
 import orderModel from "../models/order.model.js";
 import User from "../models/user.model.js";
+import Stripe from "stripe";
+
+
+// global variable
+const currency = 'inr';
+
+// gateway initialize
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 
 // ==> Placing order using COD
 const placeOrder = async (req, res) => {
 
     try {
+        const { userId, items, amount } = req.body;
+    
+        const orderData = {
+            userId,
+            items,
+            amount,
+            paymentMethod: "COD",
+            payment: true,
+            date: Date.now()
+        };
+    
+        const newOrder = new orderModel(orderData);
+        await newOrder.save();
+    
+        await User.findByIdAndUpdate(userId, {cartData:{}});
+    
+        res.json({success:true, message: "Item Purchased"});
         
     } catch (error) {
-        
+
+        console.log(error);
+        res.json({success:false, message: error.message});
     }
     
 }
@@ -18,6 +45,7 @@ const placeOrderStripe = async (req, res) => {
 
     try {
         const { userId, items, amount } = req.body;
+        const { origin } = req.headers;
     
         const orderData = {
             userId,
@@ -30,6 +58,16 @@ const placeOrderStripe = async (req, res) => {
     
         const newOrder = new orderModel(orderData);
         await newOrder.save();
+
+        const line_Items = items.map((item) => ({
+            price_data: {
+                currency: currency,
+                product_data: {
+                    name: item.name
+                },
+                unit_amount: item.price * 100
+            },
+        }))
     
         await User.findByIdAndUpdate(userId, {cartData:{}});
     

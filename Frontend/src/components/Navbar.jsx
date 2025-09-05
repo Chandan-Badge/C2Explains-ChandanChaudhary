@@ -78,7 +78,7 @@ function Navbar() {
 
   return (
     <div className='px-4 sm:px-6 md:px-10 py-5 h-[10vh] bg-[#0d1224] text-[#fff] flex justify-between items-center border-b border-b-[#b6bee5]/50 fixed top-0 w-full z-10'>
-      <div className='absolute top-0 -translate-x-1/2 left-1/2 bg-red-700 hover:bg-red-600 text-[#fff] z-[100] px-2 sm:px-6 py-1 text-[8px] sm:text-sm transition-all duration-150 ease-in-out'><span className='font-bold'>Note: </span>This project is currently in developing phase...</div>
+      <div className='absolute top-0 -translate-x-1/2 left-1/2 bg-red-700 hover:bg-red-600 text-[#fff] z-[100] px-1 sm:px-3 md:px-6 py-1 text-[8px] md:text-sm transition-all duration-150 ease-in-out'><span className='font-bold'>Note: </span>This project is currently in developing phase...</div>
       
 
       <Link to="/"><img src={assets.logo} alt="" className='w-32 md:w-44' /></Link>
