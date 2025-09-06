@@ -21,6 +21,7 @@ import SourceCode from './pages/SourceCode.jsx';
 import StackImages from './pages/StackImages.jsx';
 import Footer from './components/Footer.jsx';
 import SearchBar from './components/SearchBar.jsx';
+import Verify from './pages/Verify.jsx';
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -49,6 +50,7 @@ function App() {
           <Route path='/services' element={<Services/>} />
           <Route path='/source-code' element={<SourceCode/>} />
           <Route path='/stack-images' element={<StackImages/>} />
+          <Route path='/varify' element={<Verify/>} />
         </Routes>
 
         <Footer />
