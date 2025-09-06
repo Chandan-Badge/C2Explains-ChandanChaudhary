@@ -4,6 +4,7 @@ import { ShopContext } from '../context/shopContext'
 import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Verify = () => {
 
@@ -20,9 +21,18 @@ const Verify = () => {
                 return null;
             }
 
-            const response = await axios.post(backendUrl + "/api/order/verifystripe", {}, {headers: {token}});
+            const response = await axios.post(backendUrl + "/api/orders/verifystripe", { success, orderId }, {headers: {token}});
+
+            if(response.data.success) {
+                setCartItems({});
+                navigate("/verify");
+            } else {
+                navigate("/cart");
+            }
+
         } catch (error) {
-            
+            console.log(error);
+            toast.error(error.message);
         }
     }
 
