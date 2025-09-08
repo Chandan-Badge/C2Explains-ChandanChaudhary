@@ -24,6 +24,25 @@ function Payment() {
     setFormData(data => ({...data, [name]: value }));
   }
 
+  // ==> Razorpay function
+  // const initPay = (order) => {
+  //   const options = {
+  //     key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+  //     amount: order.amount,
+  //     currency: order.currency,
+  //     name: "Order Payment",
+  //     description: "Order Payment",
+  //     order_id: order.id,
+  //     receipt: order.receipt,
+  //     handler: async (response) => {
+  //       console.log(response);
+  //     }
+  //   }
+
+  //   const rzp = new window.Razorpay(options);
+  //   rzp.open();
+  // }
+
   const onSubmitHandler = async (event) => {
     event.preventDefault();
 
@@ -83,12 +102,19 @@ function Payment() {
         return;
       }
 
+      // ==> Razorpay Method
+      // const responseRazorpay = await axios.post(backendUrl + "/api/orders/razorpay", orderData, {headers: {token}});
+      // if(responseRazorpay.data.success) {
+      //   initPay(responseRazorpay.data.order);
+      // }
+
     } catch (error) {
       console.log(error);
       toast.error(error.message);
     }
   }
 
+  
   return (
     <form onSubmit={onSubmitHandler} className='flex gap-4 pt-5 sm:pt-14 min-h-[80vh] mt-6 md:mt-10 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
