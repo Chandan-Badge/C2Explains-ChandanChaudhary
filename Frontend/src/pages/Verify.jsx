@@ -25,7 +25,7 @@ const Verify = () => {
 
             if(response.data.success) {
                 setCartItems({});
-                navigate("/verify");
+                navigate("/oders");
             } else {
                 navigate("/cart");
             }

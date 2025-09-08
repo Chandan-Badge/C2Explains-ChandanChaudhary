@@ -78,9 +78,14 @@ function Payment() {
         toast.error(response.data.message);
       }
 
+      if (getCartAmount() < 50) {
+        toast.error("Minimum order amount must be at least ₹50.");
+        return;
+      }
+
     } catch (error) {
       console.log(error);
-      toast.error(error.message)
+      toast.error(error.message);
     }
   }
 
