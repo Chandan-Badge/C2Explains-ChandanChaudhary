@@ -3,6 +3,7 @@ import { ShopContext } from '../context/shopContext';
 import Title from "../components/Title.jsx";
 // import { products } from '../assets/assets.js';
 import CartTotal from '../components/CartTotal.jsx';
+import Button from '../components/Button.jsx';
 
 function Cart() {
 
@@ -96,6 +97,9 @@ function Cart() {
 
             <div className='w-full text-center'>
               <button onClick={() => navigate("/payment")} className='font-medium text-sm bg-gray-800 hover:bg-gray-900 text-white border border-gray-700 py-3 my-8 px-8 transition-all duration-300 ease-in-out'>Proceed to Payment</button>
+              {/* <div className='py-3 my-8 px-8'>
+                 <Button onClick={() => navigate("/payment")} text={"Proceed to Payment"} />
+              </div> */}
             </div>
           </div>
         </div>
