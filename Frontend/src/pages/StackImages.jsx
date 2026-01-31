@@ -1,9 +1,10 @@
 import React from 'react';
+import NotDesigned from '../components/NotDesigned';
 
 function StackImages() {
   return (
-    <div className='min-h-[80vh]'>
-      
+    <div className='min-h-[80vh] flex justify-center items-center'>
+      <NotDesigned />
     </div>
   )
 }

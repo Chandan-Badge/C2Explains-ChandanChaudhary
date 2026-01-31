@@ -13,8 +13,8 @@ const ProductItem = ({id, image, name, price}) => {
                 <img src={image[0]} alt="" className='hover:scale-110 transition-all ease-in-out' />
             </div>
 
-            <p className='pt-3 pb-1 text-sm'>{name}</p>
-            <p className='text-sm font-medium'>{currency}{price}</p>
+            <p className='pt-3 pb-1 text-sm text-white'>{name}</p>
+            <p className='text-sm font-medium'>{price == 0 ? "Free" : `${currency} ${price}`}</p>
         </Link>
     )
 }

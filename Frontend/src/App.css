@@ -1,26 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #b6bee5 transparent;
+}
+
 a.active hr {
-    /* display: block; */
-    opacity: 1;
+  /* display: block; */
+  opacity: 1;
 }
 
 a.active .menu {
-    /* display: block; */
-    opacity: 1;
+  /* display: block; */
+  opacity: 1;
 }
 
 .sidebar-menu.active {
-    background: linear-gradient(120deg, rgb(38, 255, 227, 0.2) 50%, transparent 80%);
+  background: linear-gradient(120deg, rgb(38, 255, 227, 0.2) 50%, transparent 80%);
 }
 
 :hover.sidebar-menu {
-    background: linear-gradient(120deg, rgb(38, 255, 227, 0.2) 50%, transparent 80%);
+  background: linear-gradient(120deg, rgb(38, 255, 227, 0.2) 50%, transparent 80%);
 }
 
 .sidebar-menu-mobile.active {
-    background-color: #00008b;
-    color: white;
+  background-color: #00008b;
+  color: white;
 }
 
 .all-collection .title {
@@ -51,13 +56,45 @@ a.active .menu {
 }
 
 /* Cart input box edit */
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button 
-{
-   -webkit-appearance: none;
-    width: 1em;
-    opacity: .5;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  width: 1em;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Not Designed Page */
+.ball {
+  left: calc(100% - 20px);
+  animation: ball-move8234 3s ease-in-out 1s infinite alternate;
+}
+
+.bar {
+  animation: up-down6123 3s ease-in-out 1s infinite alternate;
+}
+
+@keyframes up-down6123 {
+  from {
+    transform: rotate(-15deg);
+  }
+
+  to {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes ball-move8234 {
+  from {
+    left: calc(100% - 40px);
+    transform: rotate(360deg);
+  }
+
+  to {
+    left: calc(0% - 20px);
+    transform: rotate(0deg);
+  }
 }
