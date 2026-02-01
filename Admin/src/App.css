@@ -1,3 +1,10 @@
 .admin-sidebar .active {
     background-color: #1f2937;
 }
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

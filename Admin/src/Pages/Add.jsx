@@ -95,12 +95,12 @@ function Add({token}) {
 
       <div className='w-full'>
         <p className='mb-2'>Product name:</p>
-        <input onChange={(e) => setName(e.target.value)} value={name} className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="text" placeholder='type here' required />
+        <input onChange={(e) => setName(e.target.value)} value={name} className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500  focus-within:outline-[#c586a5]' type="text" placeholder='product name' required />
       </div>
 
       <div className='w-full'>
         <p className='mb-2'>Product description:</p>
-        <textarea onChange={(e) => setDescription(e.target.value)} value={description} className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500 focus-within:outline-[#c586a5]' rows={4} type="text" placeholder='write about content here' required ></textarea>
+        <textarea onChange={(e) => setDescription(e.target.value)} value={description} className='rounded w-[500px] px-3 py-2 bg-gray-900 border border-gray-500 focus-within:outline-[#c586a5]' rows={4} type="text" placeholder='write about product here' required ></textarea>
       </div>
 
       <div className='flex gap-3 sm:gap-10 w-full flex-col md:flex-row'>

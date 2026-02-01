@@ -30,15 +30,15 @@ function Footer() {
 
                 <div className="not-show-bottom flex flex-wrap items-center justify-around text-sm font-medium mb-1 text-gray-300 dark:text-gray-400 gap-4 md:gap-6 gap-y-2">
                 
-                    <Link onClick={scrollUp} to={"/profile"} className="about-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">About</Link>
+                    <Link onClick={scrollUp} to={"/about"} className="about-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">About</Link>
                 
                     <a href={"https://drive.google.com/file/d/1JwvzMMMnfaVjcqLk1Ei8RnqDI8pG4pTk/view?usp=sharing"} target="_blank" className="resume-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">Resume</a>
                 
                     <button type="button" className="project-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">Privacy Policy</button>
                 
-                    <button type="button" className="services-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">Services</button>
+                    <Link onClick={scrollUp} to={"/services"} className="services-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">Services</Link>
 
-                    <button type="button" className="connect-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">Connect</button>
+                    <Link onClick={scrollUp} to={"/contact"} className="connect-foot hover:text-[#26ffe3] border-b-2 hover:border-[#26ffe3] border-transparent transition-all ease-linear duration-[400ms] delay-75">Connect</Link>
                 
                 </div>
             </div>
