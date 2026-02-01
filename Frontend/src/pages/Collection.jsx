@@ -5,89 +5,89 @@ import ProductItem from '../components/ProductItem';
 
 function Collection() {
 
-    const { products } = useContext(ShopContext);
-    const [showFilter, setShowFilter] = useState(false);
+  const { products } = useContext(ShopContext);
+  const [showFilter, setShowFilter] = useState(false);
 
-    const [filterProducts, setFilterProducts] = useState([]);
+  const [filterProducts, setFilterProducts] = useState([]);
 
-    const [category, setCategory] = useState([]);
-    const [type, setType] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [type, setType] = useState([]);
 
-    const [sortType, setSortType] = useState("relavent");
+  const [sortType, setSortType] = useState("relavent");
 
-    // Toggle according to there category
-    const toggleCategory = (e) => {
-      if(category.includes(e.target.value)) {
-        setCategory(prev => prev.filter(item => item !== e.target.value))
-      }
-        else {
-          setCategory(prev => [...prev, e.target.value])
-        }
+  // Toggle according to there category
+  const toggleCategory = (e) => {
+    if (category.includes(e.target.value)) {
+      setCategory(prev => prev.filter(item => item !== e.target.value))
+    }
+    else {
+      setCategory(prev => [...prev, e.target.value])
+    }
+  }
+
+  // Toggle according to free or paid
+  const toggleType = (e) => {
+    if (type.includes(e.target.value)) {
+      setType(prev => prev.filter(item => item !== e.target.value))
+    }
+    else {
+      setType(prev => [...prev, e.target.value])
+    }
+  }
+
+  const applyFilter = () => {
+    let productsCopy = products.slice();
+
+    if (category.length > 0) {
+      productsCopy = productsCopy.filter(item => category.includes(item.category));
     }
 
-    // Toggle according to free or paid
-    const toggleType = (e) => {
-      if(type.includes(e.target.value)) {
-        setType(prev => prev.filter(item => item !== e.target.value))
-      }
-        else {
-          setType(prev => [...prev, e.target.value])
-        }
+    if (type.length > 0) {
+      productsCopy = productsCopy.filter(item => type.includes(item.type));
     }
 
-    const applyFilter = () => {
-      let productsCopy = products.slice();
+    setFilterProducts(productsCopy);
+  }
 
-      if(category.length > 0) {
-        productsCopy = productsCopy.filter(item => category.includes(item.category));
-      }
+  useEffect(() => {
+    setFilterProducts(products);
+  }, []);
 
-      if(type.length > 0) {
-        productsCopy = productsCopy.filter(item => type.includes(item.type));
-      }
+  // useEffect(() => {
+  //   console.log(category);
+  // }, [category]);
 
-       setFilterProducts(productsCopy);
+  // useEffect(() => {
+  //   console.log(type);
+  // }, [type]);
+
+  useEffect(() => {
+    applyFilter();
+  }, [category, type, products]);
+
+  // Sort product on the basis of there price
+  const sortProduct = () => {
+
+    let fpCopy = filterProducts.slice();
+
+    switch (sortType) {
+      case "low-high":
+        setFilterProducts(fpCopy.sort((a, b) => (a.price - b.price)));
+        break;
+
+      case "high-low":
+        setFilterProducts(fpCopy.sort((a, b) => (b.price - a.price)));
+        break;
+
+      default:
+        applyFilter();
+        break;
     }
+  }
 
-    useEffect(() => {
-      setFilterProducts(products);
-    }, []);
-
-    // useEffect(() => {
-    //   console.log(category);
-    // }, [category]);
-
-    // useEffect(() => {
-    //   console.log(type);
-    // }, [type]);
-
-    useEffect(() => {
-      applyFilter();
-    }, [category, type, products]);
-
-    // Sort product on the basis of there price
-    const sortProduct = () => {
-
-      let fpCopy = filterProducts.slice();
-  
-      switch(sortType) {
-        case "low-high" :
-          setFilterProducts(fpCopy.sort((a,b) => (a.price - b.price)));
-          break;
-  
-        case "high-low" :
-          setFilterProducts(fpCopy.sort((a,b) => (b.price - a.price)));
-          break;
-  
-        default: 
-          applyFilter();
-          break;
-      }
-    }
-
-    useEffect(() => {
-      sortProduct();
-    }, [sortType]);
+  useEffect(() => {
+    sortProduct();
+  }, [sortType]);
 
   return (
     <div className='flex flex-col md:flex-row gap-1 sm:gap-5 lg:gap-10 pt-10 text-[#fff] mt-12 md:mt-16 px-8 md:px-8 ml-0 sm:ml-28 md:ml-36 lg:ml-52 mr-0 sm:mr-10 min-h-[80vh]'>
@@ -170,13 +170,13 @@ function Collection() {
         </div>
 
       </div>
-      
+
       {/* Products */}
       <div className='flex flex-col items-start justify-start lg:justify-between'>
 
         <div className='all-collection min-w-[50vw] w-full flex flex-col lg:flex-row items-start lg:items-center justify-between text-2xl sm:text-4xl mb-4 px-0 sm:px-4'>
           <Title text1={"All"} text2={"COLLECTIONS"} />
-          
+
           {/* Product sort */}
           <select onChange={(e) => setSortType(e.target.value)} className='border-2 h-8 lg:h-10 w-36 lg:w-max border-gray-500 text-gray-200 text-xs lg:text-sm px-1 lg:px-2 bg-[#0d1224]'>
             <option className="" value="relavent">Sort by: Relavent</option>
@@ -191,7 +191,7 @@ function Collection() {
 
           {
             filterProducts.map((item, index) => (
-                <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
+              <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
             ))
           }
 

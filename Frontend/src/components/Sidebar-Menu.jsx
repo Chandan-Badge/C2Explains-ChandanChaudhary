@@ -1,71 +1,71 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 function SidebarMenu() {
-  return (
-      <div className='h-[90vh]  hidden sm:flex justify-between flex-col text-sm md:text-base text-white fixed w-max pr-7 md:pr-8 lg:pr-10 py-4 bottom-0 border-r border-r-[#b6bee5]/50'>
-        <NavLink to="/" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-          <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-          <p className=''>Home</p>
-          {/* <hr className='menu w-2/3 border-none bg-[#26ffe3] h-1 opacity-0 rotate-90' /> */}
-        </NavLink>
+    return (
+        <div className='h-[90vh]  hidden sm:flex justify-between flex-col text-sm md:text-base text-white fixed w-max pr-7 md:pr-8 lg:pr-10 py-4 bottom-0 border-r border-r-[#b6bee5]/50'>
+            <NavLink to="/" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p className=''>Home</p>
+                {/* <hr className='menu w-2/3 border-none bg-[#26ffe3] h-1 opacity-0 rotate-90' /> */}
+            </NavLink>
 
-        <NavLink to="/collection" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>Collection</p>
-        </NavLink>
+            <NavLink to="/collection" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p>Collection</p>
+            </NavLink>
 
-        <NavLink to="/projects" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>Projects</p>
-        </NavLink>
+            <NavLink to="/projects" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p>Projects</p>
+            </NavLink>
 
-        <NavLink to="/quizes" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>Quizes</p>
-        </NavLink>
+            <NavLink to="/quizes" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p>Quizes</p>
+            </NavLink>
 
-        <NavLink to="/source-code" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>Source Code</p>
-        </NavLink>
+            <NavLink to="/source-code" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p>Source Code</p>
+            </NavLink>
 
-        <NavLink to="/stack-images" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6 group'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <div className='relative'>Stack images 
-                {/* <span className='flex justify-center items-center h-[18px] bg-[#fbc638] rotate-12 group-hover:-translate-y-1 absolute rounded-full py-0 px-1.5 -right-5 -top-3 transition-all ease-in-out duration-300'>
+            <NavLink to="/stack-images" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6 group'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <div className='relative'>Stack images
+                    {/* <span className='flex justify-center items-center h-[18px] bg-[#fbc638] rotate-12 group-hover:-translate-y-1 absolute rounded-full py-0 px-1.5 -right-5 -top-3 transition-all ease-in-out duration-300'>
                     <p className='text-[8px] md:text-[10px] font-semibold text-black'>new</p>
                 </span> */}
 
-                <span className="absolute -top-4 -right-6 rotate-12 group-hover:-top-4 group-hover:rotate-6 transition-all duration-300 ease-out">
-                    <span className="relative flex items-center gap-0.5 bg-gradient-to-r from-pink-600 via-red-500 to-orange-500 px-2 py-0 text-[10px] md:text-[10px] font-bold rounded-md shadow-sm shadow-red-500/50">
-                        <svg className="w-3 h-3 animate-spin" style={{ animationDuration: '3s' }} viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
-                        </svg>
-                        <span className="tracking-wide">NEW</span>
+                    <span className="absolute -top-4 -right-6 rotate-12 group-hover:-top-4 group-hover:rotate-6 transition-all duration-300 ease-out">
+                        <span className="relative flex items-center gap-0.5 bg-gradient-to-r from-pink-600 via-red-500 to-orange-500 px-2 py-0 text-[10px] md:text-[10px] font-bold rounded-md shadow-sm shadow-red-500/50">
+                            <svg className="w-3 h-3 animate-spin" style={{ animationDuration: '3s' }} viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
+                            </svg>
+                            <span className="tracking-wide">NEW</span>
+                        </span>
                     </span>
-                </span>
-            </div>
-        </NavLink>
+                </div>
+            </NavLink>
 
-        <NavLink to="/about" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>About</p>
-        </NavLink>
+            <NavLink to="/about" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p>About</p>
+            </NavLink>
 
-        <NavLink to="/services" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>Services</p>
-        </NavLink>
+            <NavLink to="/services" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p>Services</p>
+            </NavLink>
 
-        <NavLink to="/contact" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
-            <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
-            <p>Contact</p>
-        </NavLink>
+            <NavLink to="/contact" className='sidebar-menu flex justify-start items-center gap-3 lg:gap-6'>
+                <div className="menu w-[3px] h-11 border-none bg-[#26ffe3] opacity-0 rounded-e"></div>
+                <p>Contact</p>
+            </NavLink>
 
-      </div>
-  )
+        </div>
+    )
 }
 
 export default SidebarMenu;
