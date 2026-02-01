@@ -10,7 +10,7 @@ import p_img7 from "./products/p_img7.png";
 import p_img8 from "./products/p_img8.png";
 import p_img9 from "./products/p_img9.png";
 
-export const assets =  {
+export const assets = {
     logo,
     p_img1,
     p_img2,

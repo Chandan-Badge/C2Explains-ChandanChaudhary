@@ -17,13 +17,13 @@ const Verify = () => {
     const verifyPayment = async () => {
         try {
 
-            if(!token) {
+            if (!token) {
                 return null;
             }
 
-            const response = await axios.post(backendUrl + "/api/orders/verifystripe", { success, orderId }, {headers: {token}});
+            const response = await axios.post(backendUrl + "/api/orders/verifystripe", { success, orderId }, { headers: { token } });
 
-            if(response.data.success) {
+            if (response.data.success) {
                 setCartItems({});
                 navigate("/oders");
             } else {
@@ -40,11 +40,11 @@ const Verify = () => {
         verifyPayment()
     }, [token]);
 
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 export default Verify

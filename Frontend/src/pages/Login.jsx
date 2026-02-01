@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Login() {
 
-  const {token, setToken, navigate, backendUrl} = useContext(ShopContext);
+  const { token, setToken, navigate, backendUrl } = useContext(ShopContext);
   const [currentState, setCurrentState] = useState("Login");
 
   const [name, setName] = useState("");
@@ -17,11 +17,11 @@ function Login() {
     event.preventDefault();
 
     try {
-      if(currentState == "Sign up") {
-        const response = await axios.post(backendUrl + "/api/user/register", {name, email, password});
+      if (currentState == "Sign up") {
+        const response = await axios.post(backendUrl + "/api/user/register", { name, email, password });
         // console.log(response.data);
 
-        if(response.data.success) {
+        if (response.data.success) {
           toast.success("Login successful");
 
           setToken(response.data.token);
@@ -31,9 +31,9 @@ function Login() {
         }
 
       } else {
-        const response = await axios.post(backendUrl + "/api/user/login", {email, password});
+        const response = await axios.post(backendUrl + "/api/user/login", { email, password });
 
-        if(response.data.success) {
+        if (response.data.success) {
           toast.success("Login successful");
 
           setToken(response.data.token);
@@ -44,7 +44,7 @@ function Login() {
           toast.error(response.data.message);
         }
       }
-      
+
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -52,11 +52,11 @@ function Login() {
   }
 
   useEffect(() => {
-    if(token) {
+    if (token) {
       navigate("/");
     }
   }, [token])
-  
+
   return (
     <div className='min-h-[80vh] mt-24 md:mt-28 ml-0 sm:ml-36 md:ml-56 px-4 sm:px-8'>
       <form onSubmit={onSubmitHandler} action="" className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-200'>
@@ -73,9 +73,9 @@ function Login() {
           <p className='cursor-pointer text-gray-300 hover:text-gray-100'>Forget your password?</p>
 
           {
-            currentState === "Login" 
-            ? <p className='cursor-pointer text-gray-300 hover:text-gray-100' onClick={() => setCurrentState("Sign up")}>Create account</p>
-            : <p className='cursor-pointer text-gray-300 hover:text-gray-100' onClick={() => setCurrentState("Login")}>Login Here</p>
+            currentState === "Login"
+              ? <p className='cursor-pointer text-gray-300 hover:text-gray-100' onClick={() => setCurrentState("Sign up")}>Create account</p>
+              : <p className='cursor-pointer text-gray-300 hover:text-gray-100' onClick={() => setCurrentState("Login")}>Login Here</p>
           }
         </div>
 

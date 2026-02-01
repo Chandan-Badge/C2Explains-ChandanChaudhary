@@ -10,11 +10,11 @@ function List({ token }) {
   // display the list
   const fetchList = async () => {
     try {
-      
+
       const response = await axios.get(backendUrl + '/api/product/list');
       // console.log(response.data);
 
-      if(response.data.success) {
+      if (response.data.success) {
         setList(response.data.products);
         // console.log(response.data.products);
       }
@@ -31,10 +31,10 @@ function List({ token }) {
   // remove item
   const removeProduct = async (id) => {
     try {
-      
-      const response = await axios.post(backendUrl + "/api/product/remove", { id }, { headers:{token}});
 
-      if(response.data.success) {
+      const response = await axios.post(backendUrl + "/api/product/remove", { id }, { headers: { token } });
+
+      if (response.data.success) {
         toast.success(response.data.message);
         await fetchList();
 
