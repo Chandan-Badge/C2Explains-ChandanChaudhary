@@ -13,10 +13,10 @@ const addToCart = async (req, res) => {
         // cartData[itemId] = 1;
         console.log(cartData[itemId]);
 
-        if(cartData[itemId]) {
+        if (cartData[itemId]) {
             // if(cartData[itemId]) {
-                cartData[itemId] += 1;
-                
+            cartData[itemId] += 1;
+
             // }
             // else {
             //     cartData[itemId] = 1;
@@ -40,7 +40,7 @@ const addToCart = async (req, res) => {
 
 // update user cart
 const updateCart = async (req, res) => {
-    
+
     try {
         const { userId, itemId, quantity } = req.body;
 
@@ -62,14 +62,14 @@ const updateCart = async (req, res) => {
 
 // get user cart data
 const getUserCart = async (req, res) => {
-    
+
     try {
-        
+
         const { userId } = req.body;
-    
+
         const userData = await userModel.findById(userId);
         let cartData = userData.cartItems;
-    
+
         res.json({ success: true, cartData });
 
     } catch (error) {
@@ -79,4 +79,4 @@ const getUserCart = async (req, res) => {
 
 }
 
-export {addToCart, updateCart, getUserCart};
+export { addToCart, updateCart, getUserCart };
