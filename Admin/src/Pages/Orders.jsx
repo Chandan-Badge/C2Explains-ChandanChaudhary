@@ -30,15 +30,15 @@ function Orders({ token }) {
     }
   }
 
-  const statusHandler = async ( event, orderId ) => {
+  const statusHandler = async (event, orderId) => {
 
     try {
-      const response = await axios.post(backendUrl + "/api/orders/status", { orderId, status:event.target.value }, { headers: {token} });
-  
-      if(response.data.success) {
+      const response = await axios.post(backendUrl + "/api/orders/status", { orderId, status: event.target.value }, { headers: { token } });
+
+      if (response.data.success) {
         await fetchAllData();
       }
-      
+
     } catch (error) {
       console.log(error);
       toast.error(response.data.message);
@@ -71,7 +71,7 @@ function Orders({ token }) {
               <div>
 
                 <div className='flex items-center gap-2'>
-                  <svg xmlns="http://www.w3.org/2000/svg" className='w-14 fill-[#b6bee5]' viewBox="0 -960 960 960"><path d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className='w-14 fill-[#b6bee5]' viewBox="0 -960 960 960"><path d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z" /></svg>
 
                   <div className='flex flex-col'>
                     {order.items.map((item, index) => {
@@ -91,8 +91,8 @@ function Orders({ token }) {
               <div className='text-sm sm:text-base'>
                 <p className='text-[#b6bee5]'>Items: <span className='text-[#fff]'> {order.items.length} </span> </p>
                 <p className='text-[#b6bee5]'>Method: <span className='text-[#fff]'> {order.paymentMethod} </span> </p>
-                <p className='text-[#b6bee5]'>Payment: <span className='text-[#fff]'> { order.payment ? "Done" : "Pending"} </span> </p>
-                <p className='text-[#b6bee5]'>Date: <span className='text-[#fff]'> {new Date(order.date).toLocaleDateString() } </span> </p>
+                <p className='text-[#b6bee5]'>Payment: <span className='text-[#fff]'> {order.payment ? "Done" : "Pending"} </span> </p>
+                <p className='text-[#b6bee5]'>Date: <span className='text-[#fff]'> {new Date(order.date).toLocaleDateString()} </span> </p>
               </div>
 
               <p> {currency} {order.amount} </p>

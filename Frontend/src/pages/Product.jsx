@@ -4,12 +4,15 @@ import { ShopContext } from '../context/shopContext';
 import NewsletterBox from "../components/NewsletterBox.jsx";
 import ReletedProducts from '../components/ReletedProducts.jsx';
 
+import axios from 'axios';
+import { toast } from 'react-toastify';
+
 function Product() {
 
   const { productId } = useParams();
   // console.log(productId);
 
-  const { products, addToCart } = useContext(ShopContext);
+  const { navigate, backendUrl, token, products, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
 
@@ -23,6 +26,71 @@ function Product() {
         return null;
       }
     })
+  }
+
+  const onSubmitHandler = async (event) => {
+    // event.preventDefault();
+
+    try {
+      let orderItems = [];
+
+      // for(const items in cartItems) {
+      //   for(const item in cartItems[items]) {
+
+      //     if(cartItems[items][item] > 0) {
+      //       const itemInfo = structuredClone(products.find(product => product._id === items));
+
+      //       if(itemInfo) {
+      //         itemInfo.quantity = cartItems[items][item];
+      //         orderItems.push(itemInfo);
+
+      //       }
+      //     }
+      //   }
+      // }
+
+      const itemInfo = structuredClone(products.find(product => product._id === productId));
+      if (itemInfo) {
+        // itemInfo.quantity = cartItems[productId];
+        orderItems.push(itemInfo);
+      }
+
+      // console.log(orderItems);
+
+      const orderData = {
+        items: orderItems,
+        amount: productData.price
+      }
+
+      const response = await axios.post(backendUrl + "/api/orders/stripe", orderData, { headers: { token } });
+      // console.log(response.data);
+
+      if (response.data.success) {
+        // setCartItems({});
+        // navigate("/orders");
+
+        const { session_url } = response.data
+        window.location.replace(session_url);
+
+      } else {
+        toast.error(response.data.message);
+      }
+
+      // if (productData.price < 50) {
+      //   toast.error("Minimum order amount must be at least ₹50.");
+      //   return;
+      // }
+
+      // ==> Razorpay Method
+      // const responseRazorpay = await axios.post(backendUrl + "/api/orders/razorpay", orderData, {headers: {token}});
+      // if(responseRazorpay.data.success) {
+      //   initPay(responseRazorpay.data.order);
+      // }
+
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
   }
 
   useEffect(() => {
@@ -68,12 +136,12 @@ function Product() {
 
             <div className='flex flex-col xl:flex-row gap-5 mt-4'>
               {productData.price == 0 ?
-                (<a href='/' className='bg-[#000] active:bg-gray-800 text-[#fff] text-lg md:text-xl rounded-full px-4 md:px-6 py-2 md:py-3 w-max font-medium font-sans flex gap-2 hover:-translate-y-1 transition-all duration-200 ease-in-out'>
+                (<button onClick={() => token ? navigate("/") : navigate("/login")} className='bg-[#000] active:bg-gray-800 text-[#fff] text-lg md:text-xl rounded-full px-4 md:px-6 py-2 md:py-3 w-max font-medium font-sans flex gap-2 hover:-translate-y-1 transition-all duration-200 ease-in-out'>
                   <svg xmlns="http://www.w3.org/2000/svg" className='fill-[#fff] w-4 md:w-5' viewBox="0 0 448 512"><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" /></svg>
                   Get Code
-                </a>)
+                </button>)
                 :
-                (<button className='bg-[#000] active:bg-gray-800 text-[#fff] text-lg md:text-xl rounded-full px-4 md:px-6 py-2 md:py-3 w-max font-medium font-sans flex gap-2 hover:-translate-y-1 transition-all duration-200 ease-in-out'>
+                (<button onClick={() => token ? onSubmitHandler() : navigate("/login")} type='button' className='bg-[#000] active:bg-gray-800 text-[#fff] text-lg md:text-xl rounded-full px-4 md:px-6 py-2 md:py-3 w-max font-medium font-sans flex gap-2 hover:-translate-y-1 transition-all duration-200 ease-in-out'>
                   <svg xmlns="http://www.w3.org/2000/svg" className='fill-[#fff] w-4 md:w-5' viewBox="0 0 448 512"><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" /></svg>
                   Buy Now
                 </button>)
